@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { X, Star, Crown } from "lucide-react"
+import { X, Star } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import type { BettingSite } from "../types"
@@ -64,43 +64,41 @@ export function EditorChoiceModal({ bettingSites }: EditorChoiceModalProps) {
                 key={site?.id || index}
                 className={`overflow-hidden transition-all duration-300 hover:scale-105 flex flex-col ${
                   isCenter
-                    ? "w-full sm:w-[200px] md:w-[240px] lg:w-[280px] h-[120px] sm:h-[280px] md:h-[320px] border-4 border-red-600 shadow-2xl"
-                    : "w-full sm:w-[180px] md:w-[220px] lg:w-[260px] h-[100px] sm:h-[260px] md:h-[300px] border-4 border-red-500 shadow-xl"
+                    ? "w-full sm:w-[200px] md:w-[240px] lg:w-[280px] h-[140px] sm:h-[320px] md:h-[380px] border-4 border-red-600 shadow-2xl"
+                    : "w-full sm:w-[180px] md:w-[220px] lg:w-[260px] h-[120px] sm:h-[300px] md:h-[360px] border-4 border-red-500 shadow-xl"
                 } bg-black/90 backdrop-blur-sm rounded-lg`}
               >
                 {/* Logo section */}
-                <div className="bg-gradient-to-b from-gray-800 to-gray-900 h-12 sm:h-14 md:h-20 flex items-center justify-center p-1 sm:p-2 border-b-2 border-yellow-400 flex-shrink-0">
+                <div className="bg-gradient-to-b from-gray-800 to-gray-900 h-14 sm:h-20 md:h-24 flex items-center justify-center p-2 sm:p-3 border-b-2 border-yellow-400 flex-shrink-0">
                   <div className="flex items-center gap-1">
-
                     <img
                       src={site?.logo || "/placeholder.svg"}
                       alt={site?.name || "Site"}
-                      className="h-12 sm:h-14 md:h-20 w-auto object-contain"
+                      className="h-8 sm:h-14 md:h-16 w-auto object-contain"
                     />
                   </div>
                 </div>
-
                 {/* Content */}
                 <div className="bg-black/90 text-white flex-1 flex flex-col p-1 sm:p-2 md:p-3 text-center justify-between min-h-0">
                   {/* Mobile: Horizontal layout, Desktop: Vertical */}
-                  <div className="flex sm:flex-col items-center sm:items-center justify-between sm:justify-center h-full">
-                    {/* Bonus Amount */}
-                    <div className="flex-1 sm:flex-none text-left sm:text-center">
-                      <div className="text-[10px] sm:text-xs text-gray-300 font-medium mb-0 sm:mb-1">Velkomstpakke</div>
+                  <div className="flex sm:flex-col items-center sm:items-center justify-center sm:justify-center h-full">
+                    {/* Bonus Amount - Centered */}
+                    <div className="flex-1 sm:flex-none text-center">
+                      <div className="text-xs sm:text-sm text-gray-300 font-medium mb-0 sm:mb-1">Velkomstpakke</div>
                       <div
-                        className={`${isCenter ? "text-sm sm:text-lg md:text-2xl" : "text-xs sm:text-base md:text-xl"} font-black text-yellow-400 tracking-wider leading-tight`}
+                        className={`${isCenter ? "text-base sm:text-xl md:text-3xl" : "text-sm sm:text-lg md:text-2xl"} font-black text-yellow-400 tracking-wider leading-tight`}
                       >
                         {site?.bonus}
                       </div>
                       <div
-                        className={`${isCenter ? "text-xs sm:text-sm md:text-base" : "text-[10px] sm:text-xs md:text-sm"} font-bold text-white leading-tight`}
+                        className={`${isCenter ? "text-sm sm:text-sm md:text-lg" : "text-xs sm:text-sm md:text-base"} font-bold text-white leading-tight`}
                       >
                         {site?.welcomeOffer}
                       </div>
                     </div>
 
-                    {/* Rating Stars - Mobile: Right side, Desktop: Center */}
-                    <div className="flex flex-col items-center sm:my-2">
+                    {/* Rating Stars - Moved to center with more spacing */}
+                    <div className="flex flex-col items-center sm:my-4 mx-4 sm:mx-0">
                       <div className="flex items-center gap-0.5 mb-1">
                         {[...Array(5)].map((_, i) => (
                           <Star
@@ -110,20 +108,20 @@ export function EditorChoiceModal({ bettingSites }: EditorChoiceModalProps) {
                         ))}
                       </div>
                       <span
-                        className={`text-white font-bold ${isCenter ? "text-xs sm:text-sm md:text-base" : "text-[10px] sm:text-xs md:text-sm"}`}
+                        className={`text-sm sm:text-base md:text-lg font-bold ${isCenter ? "text-xs sm:text-sm md:text-base" : "text-xs sm:text-sm md:text-base"}`}
                       >
                         {site?.rating.toFixed(1)}/10
                       </span>
                     </div>
 
-                    {/* CTA Button - Mobile: Right side, Desktop: Bottom */}
+                    {/* CTA Button - Moved to right/bottom */}
                     <div className="flex-shrink-0">
                       <Link href={site?.link || "#"} target="_blank" rel="noopener noreferrer">
                         <Button
                           className={`bg-green-600 hover:bg-green-700 text-white font-bold ${
                             isCenter
-                              ? "py-1 sm:py-2 px-2 sm:px-4 text-[10px] sm:text-xs md:text-sm"
-                              : "py-0.5 sm:py-1.5 px-1.5 sm:px-3 text-[9px] sm:text-xs"
+                              ? "py-1 sm:py-2 px-2 sm:px-4 text-xs sm:text-sm md:text-base"
+                              : "py-0.5 sm:py-1.5 px-1.5 sm:px-3 text-xs sm:text-sm"
                           } rounded shadow-lg transition-all duration-300 hover:scale-105 whitespace-nowrap`}
                           onClick={() => setIsOpen(false)}
                         >
