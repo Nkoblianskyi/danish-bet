@@ -26,19 +26,6 @@ export function BettingSiteCard({ site, rank }: SiteCardProps) {
     return votes.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
   }
 
-  const getRankBadgeColor = (rank: number) => {
-    switch (rank) {
-      case 1:
-        return "bg-tech-gold text-tech-black"
-      case 2:
-        return "text-tech-white" // Keep text white, background will be set via inline style
-      case 3:
-        return "bg-tech-black text-tech-gold border border-tech-gold"
-      default:
-        return "bg-tech-gray-800 text-tech-white"
-    }
-  }
-
   const getRankLabel = (rank: number) => {
     switch (rank) {
       case 1:
@@ -69,20 +56,17 @@ export function BettingSiteCard({ site, rank }: SiteCardProps) {
                 <img
                   src={site.logo || "/placeholder.svg"}
                   alt={site.name}
-                  className="w-36 xl:w-44 h-16 xl:h-20 object-contain"
+                  className="w-36 xl:w-44 h-16 xl:h-20 object-contain mt-4"
                 />
-                {/* Tech corner accents */}
-                <div className="absolute -top-1 -left-1 w-2 h-2 bg-tech-gold"></div>
+                {/* Tech corner accents - flags with #C8102E background */}
+                <div className="absolute -top-1 -left-1 w-2 h-2" style={{ backgroundColor: "#C8102E" }}></div>
                 <div className="absolute -top-1 -right-1 w-2 h-2" style={{ backgroundColor: "#C8102E" }}></div>
               </div>
             </div>
 
             {/* Rank and Status Badges - positioned absolutely */}
             <div className="absolute top-0 left-0 flex gap-0 z-30">
-              <div
-                className={`tech-rank px-3 py-1 text-xs font-bold ${getRankBadgeColor(rank)}`}
-                style={rank === 2 ? { backgroundColor: "#C8102E" } : {}}
-              >
+              <div className="tech-rank px-3 py-1 text-xs font-bold text-white" style={{ backgroundColor: "#C8102E" }}>
                 #{rank}
               </div>
               {rank <= 4 && (
@@ -101,7 +85,10 @@ export function BettingSiteCard({ site, rank }: SiteCardProps) {
 
             {/* RATING - 12% */}
             <div className="flex-[0_0_12%] px-2 text-center flex flex-col justify-center h-full relative z-10">
-              <div className="text-4xl xl:text-5xl font-bold leading-none mb-1 tech-heading text-tech-black">
+              <div
+                className="text-4xl xl:text-5xl font-bold leading-none mb-1 tech-heading"
+                style={{ color: "#C8102E" }}
+              >
                 {site.rating.toFixed(1)}
               </div>
               <div className="text-xs font-bold text-tech-gray-600 tech-subheading">SCORE</div>
@@ -114,12 +101,7 @@ export function BettingSiteCard({ site, rank }: SiteCardProps) {
               </div>
               <div className="flex justify-center gap-1 mb-2">
                 {[...Array(5)].map((_, i) => (
-                  <Star
-                    key={i}
-                    className={`w-4 xl:w-5 h-4 xl:h-5 ${
-                      i < Math.floor(site.rating) ? "fill-tech-gold text-tech-gold" : "text-tech-gray-300"
-                    }`}
-                  />
+                  <Star key={i} className="w-4 xl:w-5 h-4 xl:h-5 fill-current" style={{ color: "#C8102E" }} />
                 ))}
               </div>
               <div className="text-sm text-tech-black font-bold tech-subheading">FREMRAGENDE</div>
@@ -140,19 +122,7 @@ export function BettingSiteCard({ site, rank }: SiteCardProps) {
         </Link>
 
         {/* Footer Disclaimer */}
-        <div className="px-6 pb-4 border-t border-neutral-200 bg-neutral-50">
-          <p className="text-xs text-neutral-500 text-center py-2">
-            18+ | Sikker spil |{" "}
-            <a
-              href="https://spillemyndigheden.dk/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-brand-600 hover:text-brand-700 underline"
-            >
-              spillemyndigheden.dk
-            </a>
-          </p>
-        </div>
+        
       </div>
 
       {/* Tablet Layout */}
@@ -164,7 +134,7 @@ export function BettingSiteCard({ site, rank }: SiteCardProps) {
               <div className="col-span-3 flex justify-center">
                 <div className="bg-tech-white border-2 border-tech-black p-2 shadow-tech-soft w-full mt-6 relative">
                   <img src={site.logo || "/placeholder.svg"} alt={site.name} className="w-full h-12 object-contain" />
-                  <div className="absolute -top-1 -left-1 w-1 h-1 bg-tech-gold"></div>
+                  <div className="absolute -top-1 -left-1 w-1 h-1" style={{ backgroundColor: "#C8102E" }}></div>
                   <div className="absolute -top-1 -right-1 w-1 h-1" style={{ backgroundColor: "#C8102E" }}></div>
                 </div>
               </div>
@@ -172,8 +142,8 @@ export function BettingSiteCard({ site, rank }: SiteCardProps) {
               {/* Badges */}
               <div className="absolute top-0 left-0 flex gap-0 z-30">
                 <div
-                  className={`tech-rank px-2 py-0.5 text-xs font-bold ${getRankBadgeColor(rank)}`}
-                  style={rank === 2 ? { backgroundColor: "#C8102E" } : {}}
+                  className="tech-rank px-2 py-0.5 text-xs font-bold text-white"
+                  style={{ backgroundColor: "#C8102E" }}
                 >
                   #{rank}
                 </div>
@@ -193,7 +163,7 @@ export function BettingSiteCard({ site, rank }: SiteCardProps) {
 
               {/* Score - 2 колонки */}
               <div className="col-span-2 text-center">
-                <div className="text-xl font-bold leading-none tech-heading text-tech-black">
+                <div className="text-xl font-bold leading-none tech-heading" style={{ color: "#C8102E" }}>
                   {site.rating.toFixed(1)}
                 </div>
                 <div className="text-xs font-bold text-tech-gray-600 tech-subheading">SCORE</div>
@@ -204,12 +174,7 @@ export function BettingSiteCard({ site, rank }: SiteCardProps) {
                 <div className="text-xs text-tech-gray-600 mb-1 tech-subheading">({formatVotes(site.votes)})</div>
                 <div className="flex justify-center gap-0.5 mb-1">
                   {[...Array(5)].map((_, i) => (
-                    <Star
-                      key={i}
-                      className={`w-3 h-3 ${
-                        i < Math.floor(site.rating) ? "fill-tech-gold text-tech-gold" : "text-tech-gray-300"
-                      }`}
-                    />
+                    <Star key={i} className="w-3 h-3 fill-current" style={{ color: "#C8102E" }} />
                   ))}
                 </div>
               </div>
@@ -223,21 +188,6 @@ export function BettingSiteCard({ site, rank }: SiteCardProps) {
             </div>
           </div>
         </Link>
-
-        {/* Footer Disclaimer */}
-        <div className={`px-4 pb-4 border-t border-neutral-200 bg-neutral-50 ${rank <= 4 ? "pl-8 pr-4" : "px-4"}`}>
-          <p className="text-xs text-neutral-500 text-center py-2">
-            18+ | Sikker spil |{" "}
-            <a
-              href="https://spillemyndigheden.dk/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-brand-600 hover:text-brand-700 underline"
-            >
-              spillemyndigheden.dk
-            </a>
-          </p>
-        </div>
       </div>
 
       {/* Mobile Layout */}
@@ -248,8 +198,8 @@ export function BettingSiteCard({ site, rank }: SiteCardProps) {
             {/* Badges */}
             <div className="absolute top-0 left-0 flex gap-0 z-30">
               <div
-                className={`tech-rank px-1.5 py-0.5 text-xs font-bold ${getRankBadgeColor(rank)}`}
-                style={rank === 2 ? { backgroundColor: "#C8102E" } : {}}
+                className="tech-rank px-1.5 py-0.5 text-xs font-bold text-white"
+                style={{ backgroundColor: "#C8102E" }}
               >
                 #{rank}
               </div>
@@ -266,7 +216,7 @@ export function BettingSiteCard({ site, rank }: SiteCardProps) {
               <div className="flex justify-center">
                 <div className="bg-tech-white border-2 border-tech-black p-2 shadow-tech-soft relative">
                   <img src={site.logo || "/placeholder.svg"} alt={site.name} className="h-8 w-auto object-contain" />
-                  <div className="absolute -top-1 -left-1 w-1 h-1 bg-tech-gold"></div>
+                  <div className="absolute -top-1 -left-1 w-1 h-1" style={{ backgroundColor: "#C8102E" }}></div>
                   <div className="absolute -bottom-1 -right-1 w-1 h-1" style={{ backgroundColor: "#C8102E" }}></div>
                 </div>
               </div>
@@ -289,7 +239,7 @@ export function BettingSiteCard({ site, rank }: SiteCardProps) {
             {/* Rating Row */}
             <div className="grid grid-cols-2 gap-2 mt-3 pt-2 border-t-2 border-tech-gray-200 relative z-10">
               <div className="text-center">
-                <div className="text-lg font-bold leading-none mb-1 tech-heading text-tech-black">
+                <div className="text-lg font-bold leading-none mb-1 tech-heading" style={{ color: "#C8102E" }}>
                   {site.rating.toFixed(1)}
                 </div>
                 <div className="text-xs text-tech-gray-600 font-bold tech-subheading">SCORE</div>
@@ -297,12 +247,7 @@ export function BettingSiteCard({ site, rank }: SiteCardProps) {
               <div className="text-center">
                 <div className="flex justify-center gap-0.5 mb-1">
                   {[...Array(5)].map((_, i) => (
-                    <Star
-                      key={i}
-                      className={`w-2.5 h-2.5 ${
-                        i < Math.floor(site.rating) ? "fill-tech-gold text-tech-gold" : "text-tech-gray-300"
-                      }`}
-                    />
+                    <Star key={i} className="w-2.5 h-2.5 fill-current" style={{ color: "#C8102E" }} />
                   ))}
                 </div>
                 <div className="text-xs text-tech-gray-600 font-bold tech-subheading">({formatVotes(site.votes)})</div>
@@ -310,21 +255,6 @@ export function BettingSiteCard({ site, rank }: SiteCardProps) {
             </div>
           </div>
         </Link>
-
-        {/* Footer Disclaimer */}
-        <div className="px-3 pb-4 border-t border-neutral-200 bg-neutral-50">
-          <p className="text-xs text-neutral-500 text-center py-2">
-            18+ | Sikker spil |{" "}
-            <a
-              href="https://spillemyndigheden.dk/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-brand-600 hover:text-brand-700 underline"
-            >
-              spillemyndigheden.dk
-            </a>
-          </p>
-        </div>
       </div>
     </div>
   )

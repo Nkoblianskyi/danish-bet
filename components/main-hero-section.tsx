@@ -61,7 +61,7 @@ export function MainHeroSection({ onAdvertiserModalOpen, onTermsModalOpen }: Her
                       <Image src="/flag.png" alt="Logo" width={20} height={20} className="w-5 h-5" />
                       <span className="text-xs font-bold tech-subheading">LICENSERET</span>
                     </div>
-                    <div className="flex items-center gap-2 text-tech-black bg-tech-gold px-3 py-2 border border-tech-black">
+                    <div className="flex items-center gap-2 text-tech-black bg-tech-[#C8102E] px-3 py-2 border border-tech-black">
                       <Award className="w-4 h-4 text-tech-black" />
                       <span className="text-xs font-bold tech-subheading">VERIFICERET</span>
                     </div>
