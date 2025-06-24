@@ -69,13 +69,13 @@ export function EditorChoiceModal({ bettingSites }: EditorChoiceModalProps) {
                 } bg-black/90 backdrop-blur-sm rounded-lg`}
               >
                 {/* Logo section */}
-                <div className="bg-gradient-to-b from-gray-800 to-gray-900 h-8 sm:h-12 md:h-16 flex items-center justify-center p-1 sm:p-2 border-b-2 border-yellow-400 flex-shrink-0">
+                <div className="bg-gradient-to-b from-gray-800 to-gray-900 h-12 sm:h-14 md:h-20 flex items-center justify-center p-1 sm:p-2 border-b-2 border-yellow-400 flex-shrink-0">
                   <div className="flex items-center gap-1">
 
                     <img
                       src={site?.logo || "/placeholder.svg"}
                       alt={site?.name || "Site"}
-                      className="h-4 sm:h-6 md:h-8 w-auto object-contain"
+                      className="h-12 sm:h-14 md:h-20 w-auto object-contain"
                     />
                   </div>
                 </div>

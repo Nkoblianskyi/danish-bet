@@ -26,7 +26,7 @@ export function MainSiteFooter() {
               <div>
                 <h3 className="text-2xl font-bold tech-heading">
                   <span className="text-tech-gold">BETTING</span>
-                  <span className="text-tech-white">BEDSTE</span>
+                  <span className="text-tech-white"> BEDSTE</span>
                   <span style={{ color: "#C8102E" }}> DANSKE</span>
                   <span className="text-tech-gold"> SIDER</span>
                 </h3>
@@ -112,7 +112,7 @@ export function MainSiteFooter() {
             </h4>
             <div className="space-y-4">
               <div className="flex items-center gap-3 text-tech-gray-300 bg-tech-white/5 p-3 border border-tech-gold/20">
-                <Image src="/flag.png" alt="Trustpilot" width={32} height={32} />
+                <Shield className="w-4 h-4 text-tech-gold" />
                 <span className="text-sm tech-subheading">LICENSERET & REGULERET</span>
               </div>
               <div
@@ -149,14 +149,14 @@ export function MainSiteFooter() {
               </div>
             </Link>
             <Link href="https://stopspillet.dk/" className="group">
-              <div className="bg-tech-white border-2 border-tech-black p-4 shadow-tech-medium group-hover:shadow-tech-glow transition-all duration-300 transform group-hover:scale-105 relative">
+              <div className=" border-2 border-tech-black p-4 shadow-tech-medium group-hover:shadow-tech-glow transition-all duration-300 transform group-hover:scale-105 relative">
                 <img src="/stopsillet.svg" alt="StopSpillet" className="h-8 md:h-10 object-contain" />
                 <div className="absolute -top-1 -right-1 w-2 h-2 bg-tech-gold"></div>
                 <div className="absolute -bottom-1 -left-1 w-2 h-2" style={{ backgroundColor: "#C8102E" }}></div>
               </div>
             </Link>
             <Link href="https://www.rofus.nu/" className="group">
-              <div className="bg-tech-white border-2 border-tech-black p-4 shadow-tech-medium group-hover:shadow-tech-glow transition-all duration-300 transform group-hover:scale-105 relative">
+              <div className=" border-2 border-tech-black p-4 shadow-tech-medium group-hover:shadow-tech-glow transition-all duration-300 transform group-hover:scale-105 relative">
                 <img src="/rofus.png" alt="ROFUS" className="h-6 md:h-8 object-contain" />
                 <div className="absolute -top-1 -left-1 w-2 h-2" style={{ backgroundColor: "#C8102E" }}></div>
                 <div className="absolute -bottom-1 -right-1 w-2 h-2 bg-tech-gold"></div>
