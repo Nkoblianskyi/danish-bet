@@ -112,7 +112,7 @@ export function MainSiteFooter() {
             </h4>
             <div className="space-y-4">
               <div className="flex items-center gap-3 text-tech-gray-300 bg-tech-white/5 p-3 border border-tech-gold/20">
-                <Shield className="w-4 h-4 text-tech-gold" />
+                <Image src="/flag.png" alt="Logo" width={20} height={20} className="w-5 h-5" />
                 <span className="text-sm tech-subheading">LICENSERET & REGULERET</span>
               </div>
               <div
@@ -202,12 +202,6 @@ export function MainSiteFooter() {
 
             <p className="font-bold text-sm mb-2 tech-heading" style={{ color: "#C8102E" }}>
               🔞 18+ | KUN DANSKE SPILLERE | SPIL KAN VÆRE VANEDANNENDE — SPIL SIKKERT
-            </p>
-            <p className="text-xs tech-body" style={{ color: "#C8102E" }}>
-              HVIS DU ELLER NOGEN DU KENDER HAR ET SPILPROBLEM, SØG VENLIGST HJÆLP.
-              <Link href="/responsible-gaming" className="underline hover:text-tech-white ml-2 tech-subheading">
-                FÅ STØTTE
-              </Link>
             </p>
           </div>
         </div>

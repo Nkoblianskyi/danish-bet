@@ -103,7 +103,7 @@ export function MainHeroSection({ onAdvertiserModalOpen, onTermsModalOpen }: Her
             <div className="mt-6">
               <div className="flex flex-wrap justify-center items-center gap-3">
                 <div className="flex items-center gap-2 text-tech-white bg-tech-black px-2 py-1 border border-tech-gold">
-                  <Shield className="w-3 h-3 text-tech-gold" />
+                  <Image src="/flag.png" alt="Logo" width={20} height={20} className="w-5 h-5" />
                   <span className="text-xs font-bold tech-subheading">LICENSERET</span>
                 </div>
                 <div className="flex items-center gap-2 text-tech-black bg-tech-gold px-2 py-1 border border-tech-black">
