@@ -63,7 +63,6 @@ export function BettingSiteCard({ site, rank }: SiteCardProps) {
                 <div className="absolute -top-1 -right-1 w-2 h-2" style={{ backgroundColor: "#C8102E" }}></div>
               </div>
             </div>
-
             {/* Rank and Status Badges - positioned absolutely */}
             <div className="absolute top-0 left-0 flex gap-0 z-30">
               <div className="tech-rank px-3 py-1 text-xs font-bold text-white" style={{ backgroundColor: "#C8102E" }}>
@@ -82,7 +81,6 @@ export function BettingSiteCard({ site, rank }: SiteCardProps) {
               <div className="text-lg xl:text-xl font-bold text-tech-black mb-1 tech-heading">{site.bonus}</div>
               <div className="text-lg xl:text-xl font-bold text-tech-black tech-heading">{site.welcomeOffer}</div>
             </div>
-
             {/* RATING - 12% */}
             <div className="flex-[0_0_12%] px-2 text-center flex flex-col justify-center h-full relative z-10">
               <div
@@ -120,21 +118,6 @@ export function BettingSiteCard({ site, rank }: SiteCardProps) {
             </div>
           </div>
         </Link>
-
-        {/* Footer Disclaimer */}
-        <div className="px-6 pb-4 border-t border-neutral-200 bg-neutral-50">
-          <p className="text-xs text-neutral-500 text-center py-2">
-            18+ | Sikker spil |{" "}
-            <a
-              href="https://spillemyndigheden.dk/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-brand-600 hover:text-brand-700 underline"
-            >
-              spillemyndigheden.dk
-            </a>
-          </p>
-        </div>
       </div>
 
       {/* Tablet Layout */}
@@ -201,20 +184,6 @@ export function BettingSiteCard({ site, rank }: SiteCardProps) {
           </div>
         </Link>
 
-        {/* Footer Disclaimer */}
-        <div className={`px-4 pb-4 border-t border-neutral-200 bg-neutral-50 ${rank <= 4 ? "pl-8 pr-4" : "px-4"}`}>
-          <p className="text-xs text-neutral-500 text-center py-2">
-            18+ | Sikker spil |{" "}
-            <a
-              href="https://spillemyndigheden.dk/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-brand-600 hover:text-brand-700 underline"
-            >
-              spillemyndigheden.dk
-            </a>
-          </p>
-        </div>
       </div>
 
       {/* Mobile Layout */}
