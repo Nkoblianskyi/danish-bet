@@ -83,8 +83,8 @@ export function MainHeroSection({ onAdvertiserModalOpen, onTermsModalOpen }: Her
 
       {/* Tablet & Mobile Hero */}
       <div className="lg:hidden mb-6">
-        <div className="bg-black/70 backdrop-blur-sm border border-gray-200 shadow-lg max-w-[1150px] mx-auto rounded-lg">
-          <div className="px-4 py-6 text-center bg-white/50">
+        <div className="bg-white/70 shadow-lg max-w-[1150px] mx-auto rounded-lg">
+          <div className="px-4 py-6 text-center">
             <h1 className="text-2xl md:text-3xl font-bold mb-3 text-black">Bedste Danske Betting Sider</h1>
             <h2 className="text-sm md:text-base font-medium mb-4 text-black">
               Ekspert Anmeldelser for {getCurrentMonthYear()}
