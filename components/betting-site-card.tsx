@@ -49,14 +49,14 @@ export function BettingSiteCard({ site, rank }: SiteCardProps) {
       >
         <Link href={site.link} target="_blank" rel="noopener noreferrer" className="block">
           {/* Main Content */}
-          <div className="h-32 flex items-center py-4 px-6 bg-tech-white relative">
+          <div className="h-40 flex items-center py-6 px-6 bg-tech-white relative">
             {/* PLATFORM - 30% */}
             <div className="flex-[0_0_30%] pr-2 flex justify-center items-center h-full relative z-10">
-              <div className="bg-tech-white border-2 border-tech-black p-4 shadow-tech-medium relative">
+              <div className="bg-tech-white border-2 border-tech-black p-4 shadow-tech-medium relative mt-4">
                 <img
                   src={site.logo || "/placeholder.svg"}
                   alt={site.name}
-                  className="w-36 xl:w-44 h-16 xl:h-20 object-contain mt-4"
+                  className="w-36 xl:w-44 h-16 xl:h-20 object-contain"
                 />
                 {/* Tech corner accents - flags with #C8102E background */}
                 <div className="absolute -top-1 -left-1 w-2 h-2" style={{ backgroundColor: "#C8102E" }}></div>
@@ -122,17 +122,29 @@ export function BettingSiteCard({ site, rank }: SiteCardProps) {
         </Link>
 
         {/* Footer Disclaimer */}
-        
+        <div className="px-6 pb-4 border-t border-neutral-200 bg-neutral-50">
+          <p className="text-xs text-neutral-500 text-center py-2">
+            18+ | Sikker spil |{" "}
+            <a
+              href="https://spillemyndigheden.dk/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-brand-600 hover:text-brand-700 underline"
+            >
+              spillemyndigheden.dk
+            </a>
+          </p>
+        </div>
       </div>
 
       {/* Tablet Layout */}
       <div className="hidden md:block lg:hidden tech-card border border-tech-gray-300 relative overflow-hidden cursor-pointer mb-2 mx-4">
         <Link href={site.link} target="_blank" rel="noopener noreferrer" className="block">
-          <div className={`pt-4 pb-4 ${rank <= 4 ? "pl-8 pr-4" : "px-4"} bg-tech-white relative`}>
+          <div className={`pt-6 pb-4 ${rank <= 4 ? "pl-8 pr-4" : "px-4"} bg-tech-white relative`}>
             <div className="grid grid-cols-12 gap-2 items-center relative z-10">
               {/* Logo - 3 колонки */}
               <div className="col-span-3 flex justify-center">
-                <div className="bg-tech-white border-2 border-tech-black p-2 shadow-tech-soft w-full mt-6 relative">
+                <div className="bg-tech-white border-2 border-tech-black p-2 shadow-tech-soft w-full mt-4 relative">
                   <img src={site.logo || "/placeholder.svg"} alt={site.name} className="w-full h-12 object-contain" />
                   <div className="absolute -top-1 -left-1 w-1 h-1" style={{ backgroundColor: "#C8102E" }}></div>
                   <div className="absolute -top-1 -right-1 w-1 h-1" style={{ backgroundColor: "#C8102E" }}></div>
@@ -188,6 +200,21 @@ export function BettingSiteCard({ site, rank }: SiteCardProps) {
             </div>
           </div>
         </Link>
+
+        {/* Footer Disclaimer */}
+        <div className={`px-4 pb-4 border-t border-neutral-200 bg-neutral-50 ${rank <= 4 ? "pl-8 pr-4" : "px-4"}`}>
+          <p className="text-xs text-neutral-500 text-center py-2">
+            18+ | Sikker spil |{" "}
+            <a
+              href="https://spillemyndigheden.dk/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-brand-600 hover:text-brand-700 underline"
+            >
+              spillemyndigheden.dk
+            </a>
+          </p>
+        </div>
       </div>
 
       {/* Mobile Layout */}
@@ -211,7 +238,7 @@ export function BettingSiteCard({ site, rank }: SiteCardProps) {
             </div>
 
             {/* Content Grid */}
-            <div className="grid grid-cols-3 gap-2 items-center mt-6 relative z-10">
+            <div className="grid grid-cols-3 gap-2 items-center mt-8 relative z-10">
               {/* Logo Column */}
               <div className="flex justify-center">
                 <div className="bg-tech-white border-2 border-tech-black p-2 shadow-tech-soft relative">
@@ -255,6 +282,8 @@ export function BettingSiteCard({ site, rank }: SiteCardProps) {
             </div>
           </div>
         </Link>
+
+
       </div>
     </div>
   )
