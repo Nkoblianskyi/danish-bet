@@ -2,7 +2,7 @@
 
 export function InformationalContent() {
   return (
-    <div className="mt-12 max-w-[1580px] mx-auto">
+    <div className="mt-12 max-w-[1150px] mx-auto">
       {/* Main Guide Section */}
       <section className="bg-brand-dark/95 backdrop-blur-sm rounded-lg overflow-hidden shadow-strong mb-8 border border-white/30">
         <div className="relative px-6 py-8 bg-black/50 backdrop-blur-md">

@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { ArrowLeft } from "lucide-react"
+import { ArrowLeft, Lock, Eye, Shield, Database } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 export default function PrivacyPolicyPage() {
@@ -12,70 +12,117 @@ export default function PrivacyPolicyPage() {
         </Button>
       </Link>
 
-      <div className="bg-white/95 backdrop-blur-sm rounded-lg p-8 shadow-lg max-w-4xl mx-auto">
-        <h1 className="text-3xl font-bold mb-4">Privatlivspolitik</h1>
-        <p className="text-gray-600 mb-6">
-          Sidst opdateret: {new Date().toLocaleDateString("da-DK", { month: "long", day: "numeric", year: "numeric" })}
-        </p>
+      <div className="bg-white/95 backdrop-blur-sm rounded-lg shadow-lg max-w-4xl mx-auto overflow-hidden">
+        {/* Header */}
+        <div className="bg-gradient-to-r from-purple-600 to-purple-700 text-white p-8">
+          <div className="flex items-center gap-4 mb-4">
+            <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
+              <Lock className="w-6 h-6" />
+            </div>
+            <h1 className="text-3xl font-bold">Privatlivspolitik</h1>
+          </div>
+          <p className="text-purple-100 text-lg">Hvordan vi beskytter og håndterer dine personlige oplysninger</p>
+        </div>
 
-        <div className="prose max-w-none">
-          <h2>1. Data Vi Indsamler</h2>
-          <p>
-            Vi indsamler oplysninger som du frivilligt giver når du registrerer en konto, abonnerer på vores
-            opdateringer, eller kontakter os for hjælp og supporttjenester.
-          </p>
+        {/* Content */}
+        <div className="p-8">
+          <div className="grid md:grid-cols-2 gap-8 mb-8">
+            <div className="bg-blue-50 p-6 rounded-lg">
+              <div className="flex items-center gap-3 mb-4">
+                <Database className="w-6 h-6 text-blue-600" />
+                <h3 className="text-xl font-bold text-blue-900">Hvilke Data Vi Indsamler</h3>
+              </div>
+              <ul className="text-blue-800 space-y-2 text-sm">
+                <li>• Grundlæggende brugeroplysninger</li>
+                <li>• Browser og enhedsoplysninger</li>
+                <li>• Brugsstatistikker og præferencer</li>
+                <li>• Interaktionsdata på platformen</li>
+              </ul>
+            </div>
 
-          <h3>Individuelle Data</h3>
-          <ul>
-            <li>Fulde navn og elektronisk postadresse</li>
-            <li>Internet protokol adresse og browser detaljer</li>
-            <li>Hjemmeside brugsmønstre og brugerpræferencer</li>
-            <li>Sporings teknologier og analytiske data</li>
-          </ul>
+            <div className="bg-green-50 p-6 rounded-lg">
+              <div className="flex items-center gap-3 mb-4">
+                <Eye className="w-6 h-6 text-green-600" />
+                <h3 className="text-xl font-bold text-green-900">Hvordan Vi Bruger Data</h3>
+              </div>
+              <ul className="text-green-800 space-y-2 text-sm">
+                <li>• Forbedre platformens funktionalitet</li>
+                <li>• Levere relevant indhold</li>
+                <li>• Analysere brugeradfærd</li>
+                <li>• Sikre platform sikkerhed</li>
+              </ul>
+            </div>
+          </div>
 
-          <h2>2. Informations Udnyttelse</h2>
-          <p>Vi bruger indsamlede oplysninger til følgende formål:</p>
-          <ul>
-            <li>Levere og forbedre vores platform tjenester</li>
-            <li>Distribuere nyhedsbreve og kampagne kommunikation</li>
-            <li>Undersøge brugeradfærdsmønstre og hjemmeside tendenser</li>
-            <li>Opretholde overholdelse af regulatoriske krav</li>
-          </ul>
+          <div className="mb-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">Databeskyttelse Principper</h2>
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="border border-gray-200 p-4 rounded-lg">
+                <h4 className="font-semibold text-gray-900 mb-2">Minimering</h4>
+                <p className="text-sm text-gray-600">
+                  Vi indsamler kun de data der er nødvendige for platformens drift
+                </p>
+              </div>
+              <div className="border border-gray-200 p-4 rounded-lg">
+                <h4 className="font-semibold text-gray-900 mb-2">Sikkerhed</h4>
+                <p className="text-sm text-gray-600">Alle data beskyttes med moderne sikkerhedsforanstaltninger</p>
+              </div>
+              <div className="border border-gray-200 p-4 rounded-lg">
+                <h4 className="font-semibold text-gray-900 mb-2">Gennemsigtighed</h4>
+                <p className="text-sm text-gray-600">Klar kommunikation om hvordan dine data bruges</p>
+              </div>
+            </div>
+          </div>
 
-          <h2>3. Data Delingspraksisser</h2>
-          <p>
-            Vi sælger, udveksler eller overfører ikke dine personlige oplysninger til eksterne parter uden eksplicit
-            samtykke, undtagen som specifikt beskrevet i denne privatlivspolitik.
-          </p>
+          <div className="bg-purple-50 border-l-4 border-purple-400 p-6 mb-8">
+            <div className="flex items-center gap-3 mb-3">
+              <Shield className="w-6 h-6 text-purple-600" />
+              <h3 className="text-purple-900 font-bold text-xl">Dine Rettigheder</h3>
+            </div>
+            <p className="text-purple-800 mb-3">Du har følgende rettigheder vedrørende dine personlige data:</p>
+            <ul className="text-purple-800 space-y-2 text-sm">
+              <li>• Ret til indsigt i dine gemte data</li>
+              <li>• Ret til rettelse af ukorrekte oplysninger</li>
+              <li>• Ret til sletning af dine data</li>
+              <li>• Ret til begrænsning af databehandling</li>
+              <li>• Ret til dataportabilitet</li>
+            </ul>
+          </div>
 
-          <h2>4. Cookie Teknologi</h2>
-          <p>
-            Vi anvender cookies til at forbedre din browsing oplevelse på vores platform. Du kan deaktivere cookies
-            gennem din browser konfiguration, selvom dette kan påvirke visse hjemmeside funktionaliteter.
-          </p>
+          <div className="mb-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Sikkerhedsforanstaltninger</h2>
+            <div className="bg-gray-50 p-6 rounded-lg">
+              <p className="text-gray-700 mb-4">
+                Vi implementerer omfattende sikkerhedsforanstaltninger for at beskytte dine personlige oplysninger:
+              </p>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <h4 className="font-semibold text-gray-900 mb-2">Tekniske Foranstaltninger</h4>
+                  <ul className="text-gray-600 text-sm space-y-1">
+                    <li>• Kryptering af følsomme data</li>
+                    <li>• Sikre serverinfrastrukturer</li>
+                    <li>• Regelmæssige sikkerhedsopdateringer</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-900 mb-2">Organisatoriske Foranstaltninger</h4>
+                  <ul className="text-gray-600 text-sm space-y-1">
+                    <li>• Begrænset adgang til data</li>
+                    <li>• Medarbejdertræning i datasikkerhed</li>
+                    <li>• Regelmæssige sikkerhedsgennemgange</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
 
-          <h2>5. Informations Sikkerhed</h2>
-          <p>
-            Vi opretholder robuste sikkerhedsprotokoller til at beskytte dine personlige data mod uautoriseret adgang,
-            modifikation, offentliggørelse eller ødelæggelse gennem industri-standard beskyttelsesforanstaltninger.
-          </p>
-
-          <h2>6. Brugerrettigheder</h2>
-          <p>Under gældende databeskyttelsesreguleringer besidder du retten til:</p>
-          <ul>
-            <li>Gennemgå dine gemte personlige oplysninger</li>
-            <li>Modificere ukorrekte eller forældede data</li>
-            <li>Anmode om sletning af dine oplysninger</li>
-            <li>Protestere mod specifikke databehandlingsaktiviteter</li>
-            <li>Overføre dine data til en anden tjenesteudbyder</li>
-          </ul>
-
-          <h2>7. Politik Modifikationer</h2>
-          <p>
-            Vi kan periodisk opdatere denne Privatlivspolitik for at afspejle ændringer i vores praksisser eller
-            juridiske krav. Vi vil informere dig om betydelige ændringer ved at poste den reviderede politik på denne
-            side med en opdateret ikrafttrædelsesdato.
-          </p>
+          <div className="bg-yellow-50 border-l-4 border-yellow-400 p-6">
+            <h3 className="text-yellow-800 font-bold mb-3">Opdateringer af Politikken</h3>
+            <p className="text-yellow-700">
+              Vi kan periodisk opdatere denne privatlivspolitik for at afspejle ændringer i vores praksis eller
+              juridiske krav. Væsentlige ændringer vil blive kommunikeret tydeligt på platformen.
+            </p>
+          </div>
         </div>
       </div>
     </div>

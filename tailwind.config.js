@@ -81,6 +81,8 @@ module.exports = {
         "neon-red": "#FF073A",
         "neon-blue": "#00D4FF",
         "neon-green": "#39FF14",
+        // Danish flag colors
+        "danish-red": "#C8102E", // Official Danish flag red
       },
       borderRadius: {
         lg: "var(--radius)",

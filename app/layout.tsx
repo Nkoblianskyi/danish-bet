@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   description:
     "Opdag Danmarks bedste betting sider med ekspert anmeldelser, eksklusive bonusser og omfattende sammenligninger. Find din perfekte bookmaker i dag.",
   keywords: "danske betting sider, bookmakere Danmark, betting bonusser, sports betting Danmark",
+    generator: 'v0.dev'
 }
 
 export default function RootLayout({
@@ -30,7 +31,7 @@ export default function RootLayout({
         <div
           className="min-h-screen relative"
           style={{
-            backgroundImage: "url(/bg-7.jpg)",
+            backgroundImage: "url(/stadium-background.jpg)",
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundAttachment: "fixed",

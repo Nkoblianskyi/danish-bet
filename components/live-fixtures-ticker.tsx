@@ -118,13 +118,13 @@ export function LiveFixturesTicker() {
 
   if (loading) {
     return (
-      <div className="tech-card border-2 border-tech-gold max-w-[1580px] mx-auto mb-4">
+      <div className="tech-card border-2 border-tech-gold max-w-[1150px] mx-auto mb-4">
         <div className="bg-tech-black text-tech-white py-3 text-center">
           <div className="flex items-center justify-center gap-3">
             <div className="w-2 h-2 bg-tech-gold animate-pulse"></div>
-            <div className="w-2 h-2 bg-tech-red animate-pulse"></div>
+            <div className="w-2 h-2 animate-pulse" style={{ backgroundColor: "#C8102E" }}></div>
             <span className="text-sm font-bold tech-subheading">LOADING LIVE DATA...</span>
-            <div className="w-2 h-2 bg-tech-red animate-pulse"></div>
+            <div className="w-2 h-2 animate-pulse" style={{ backgroundColor: "#C8102E" }}></div>
             <div className="w-2 h-2 bg-tech-gold animate-pulse"></div>
           </div>
         </div>
@@ -135,7 +135,7 @@ export function LiveFixturesTicker() {
   if (matches.length === 0) return null
 
   return (
-    <div className="relative overflow-hidden mb-4 max-w-[1580px] mx-auto">
+    <div className="relative overflow-hidden mb-4 max-w-[1150px] mx-auto">
       <div className="tech-card border-2 border-tech-black overflow-hidden">
         {/* Scrolling content */}
         <div className="relative overflow-hidden h-14 bg-tech-black">
@@ -149,7 +149,7 @@ export function LiveFixturesTicker() {
                   className="flex-shrink-0 px-6 py-3 border-l border-tech-gold/30 min-w-[320px] text-center whitespace-nowrap"
                 >
                   <div className="font-bold text-sm text-tech-white mb-1 tech-heading">
-                    {match.homeTeam} <span className="text-tech-red">VS</span> {match.awayTeam}
+                    {match.homeTeam} <span style={{ color: "#C8102E" }}>VS</span> {match.awayTeam}
                   </div>
                   <div className="flex items-center justify-center gap-4 text-xs text-tech-gray-300">
                     <div className="flex items-center gap-1">
@@ -157,7 +157,7 @@ export function LiveFixturesTicker() {
                       <span className="tech-subheading">{match.date}</span>
                     </div>
                     <div className="flex items-center gap-1">
-                      <Clock className="w-3 h-3 text-tech-red" />
+                      <Clock className="w-3 h-3" style={{ color: "#C8102E" }} />
                       <span className="tech-subheading">{match.time}</span>
                     </div>
                     <div className="text-tech-gold font-bold tech-subheading">{match.league}</div>
@@ -172,7 +172,7 @@ export function LiveFixturesTicker() {
           <div className="flex items-center gap-3">
             <div className="relative">
               <Image src="/logo.png" alt="Irish Flag" width={24} height={24} className="w-6 h-6" />
-              <div className="absolute -top-1 -right-1 w-2 h-2 bg-tech-red"></div>
+              <div className="absolute -top-1 -right-1 w-2 h-2" style={{ backgroundColor: "#C8102E" }}></div>
             </div>
             <div className="text-center leading-tight">
               <div className="text-xs font-bold tech-heading flex items-center gap-1">

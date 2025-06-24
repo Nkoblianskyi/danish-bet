@@ -17,7 +17,7 @@ export function EditorChoiceModal({ bettingSites }: EditorChoiceModalProps) {
     // Показувати модалку через 5 секунд після завантаження
     const timer = setTimeout(() => {
       setIsOpen(true)
-    }, 5000)
+    }, 8000)
 
     return () => clearTimeout(timer)
   }, [])
@@ -34,31 +34,27 @@ export function EditorChoiceModal({ bettingSites }: EditorChoiceModalProps) {
   ]
 
   return (
-    <div className="fixed inset-0 bg-black/80 backdrop-blur-md z-50 flex items-center justify-center p-4">
+    <div className="fixed inset-0 bg-black/80 backdrop-blur-md z-50 flex items-center justify-center p-2 sm:p-4">
       {/* Close button */}
       <Button
         variant="ghost"
         size="sm"
         onClick={() => setIsOpen(false)}
-        className="absolute top-4 right-4 text-white hover:bg-white/20 z-10 w-10 h-10 p-0 bg-black/50 border border-white/30 rounded-full"
+        className="absolute top-2 right-2 sm:top-4 sm:right-4 text-white hover:bg-white/20 z-10 w-8 h-8 sm:w-10 sm:h-10 p-0 bg-black/50 border border-white/30 rounded-full"
       >
-        <X className="w-5 h-5" />
+        <X className="w-4 h-4 sm:w-5 sm:h-5" />
       </Button>
 
-      <div className="w-full max-w-5xl">
+      <div className="w-full h-full flex flex-col justify-center items-center max-w-sm sm:max-w-2xl md:max-w-4xl lg:max-w-5xl">
         {/* Golden Banner */}
-        <div className="text-center mb-6">
-          <div className="inline-block bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-400 text-black font-bold py-3 px-8 relative rounded-lg shadow-lg">
-            {/* Banner decorative elements */}
-            <div className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-2 w-0 h-0 border-t-[15px] border-t-transparent border-r-[15px] border-r-yellow-400 border-b-[15px] border-b-transparent"></div>
-            <div className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-2 w-0 h-0 border-t-[15px] border-t-transparent border-l-[15px] border-l-yellow-400 border-b-[15px] border-b-transparent"></div>
-
-            <span className="text-sm md:text-base font-black tracking-wide">REDAKTØRENS VALG DENNE UGE</span>
+        <div className="text-center mb-2 sm:mb-4 px-2 flex-shrink-0">
+          <div className="inline-block bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-400 text-black font-bold py-1 sm:py-2 px-3 sm:px-6 relative rounded-lg shadow-lg">
+            <span className="text-xs sm:text-sm font-black tracking-wide">REDAKTØRENS VALG</span>
           </div>
         </div>
 
-        {/* Cards Layout */}
-        <div className="flex items-end justify-center gap-3 md:gap-4 w-full">
+        {/* Cards Layout - Mobile: Stack vertically, Tablet+: Horizontal */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 w-full px-2 flex-1 min-h-0">
           {reorderedSites.map((site: BettingSite, index: number) => {
             const isCenter = index === 1
             const rank = isCenter ? 1 : index === 0 ? 2 : 3
@@ -68,72 +64,73 @@ export function EditorChoiceModal({ bettingSites }: EditorChoiceModalProps) {
                 key={site?.id || index}
                 className={`overflow-hidden transition-all duration-300 hover:scale-105 flex flex-col ${
                   isCenter
-                    ? "w-[280px] md:w-[320px] h-[420px] md:h-[450px] border-4 border-red-600 shadow-2xl"
-                    : "w-[240px] md:w-[280px] h-[400px] md:h-[430px] border-4 border-red-500 shadow-xl"
+                    ? "w-full sm:w-[200px] md:w-[240px] lg:w-[280px] h-[120px] sm:h-[280px] md:h-[320px] border-4 border-red-600 shadow-2xl"
+                    : "w-full sm:w-[180px] md:w-[220px] lg:w-[260px] h-[100px] sm:h-[260px] md:h-[300px] border-4 border-red-500 shadow-xl"
                 } bg-black/90 backdrop-blur-sm rounded-lg`}
               >
                 {/* Logo section */}
-                <div className="bg-gradient-to-b from-gray-800 to-gray-900 h-16 md:h-20 flex items-center justify-center p-3 md:p-4 border-b-2 border-yellow-400 flex-shrink-0">
-                  <div className="flex items-center gap-2">
-                    {isCenter && <Crown className="w-6 h-6 text-yellow-400" />}
+                <div className="bg-gradient-to-b from-gray-800 to-gray-900 h-8 sm:h-12 md:h-16 flex items-center justify-center p-1 sm:p-2 border-b-2 border-yellow-400 flex-shrink-0">
+                  <div className="flex items-center gap-1">
+
                     <img
                       src={site?.logo || "/placeholder.svg"}
                       alt={site?.name || "Site"}
-                      className="h-10 md:h-12 w-auto object-contain"
+                      className="h-4 sm:h-6 md:h-8 w-auto object-contain"
                     />
-                    {isCenter && <Crown className="w-6 h-6 text-yellow-400" />}
                   </div>
                 </div>
 
                 {/* Content */}
-                <div className="bg-black/90 text-white flex-1 flex flex-col p-3 md:p-4 text-center">
-                  {/* Welcome Package Text */}
-                  <div className="mb-2">
-                    <p className={`${isCenter ? "text-base" : "text-sm"} text-gray-300 font-medium`}>
-                      Velkomstpakke Op Til
-                    </p>
-                  </div>
-
-                  {/* Bonus Amount */}
-                  <div className="flex-1 flex flex-col justify-center mb-3 md:mb-4">
-                    <div
-                      className={`${isCenter ? "text-3xl md:text-4xl" : "text-2xl md:text-3xl"} font-black mb-2 text-yellow-400 tracking-wider`}
-                    >
-                      {site?.bonus}
-                    </div>
-                    <div className={`${isCenter ? "text-lg md:text-xl" : "text-base md:text-lg"} font-bold text-white`}>
-                      {site?.welcomeOffer}
-                    </div>
-                  </div>
-
-                  {/* Rating Stars */}
-                  <div className="flex items-center justify-center gap-0.5 md:gap-1 mb-4">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className={`${isCenter ? "w-5 h-5" : "w-4 h-4"} fill-yellow-400 text-yellow-400`} />
-                    ))}
-                    <span className={`text-white font-bold ${isCenter ? "text-lg" : "text-base"} ml-2`}>
-                      {site?.rating.toFixed(1)}
-                      <span className="text-gray-400">/10</span>
-                    </span>
-                  </div>
-
-                  {/* CTA Button */}
-                  <div className="mb-3">
-                    <Link href={site?.link || "#"} target="_blank" rel="noopener noreferrer">
-                      <Button
-                        className={`w-full bg-green-600 hover:bg-green-700 text-white font-bold ${
-                          isCenter ? "py-3 px-6 text-base" : "py-2 px-4 text-sm"
-                        } rounded-lg shadow-lg transition-all duration-300 hover:scale-105`}
-                        onClick={() => setIsOpen(false)}
+                <div className="bg-black/90 text-white flex-1 flex flex-col p-1 sm:p-2 md:p-3 text-center justify-between min-h-0">
+                  {/* Mobile: Horizontal layout, Desktop: Vertical */}
+                  <div className="flex sm:flex-col items-center sm:items-center justify-between sm:justify-center h-full">
+                    {/* Bonus Amount */}
+                    <div className="flex-1 sm:flex-none text-left sm:text-center">
+                      <div className="text-[10px] sm:text-xs text-gray-300 font-medium mb-0 sm:mb-1">Velkomstpakke</div>
+                      <div
+                        className={`${isCenter ? "text-sm sm:text-lg md:text-2xl" : "text-xs sm:text-base md:text-xl"} font-black text-yellow-400 tracking-wider leading-tight`}
                       >
-                        FÅ BONUS
-                      </Button>
-                    </Link>
-                  </div>
+                        {site?.bonus}
+                      </div>
+                      <div
+                        className={`${isCenter ? "text-xs sm:text-sm md:text-base" : "text-[10px] sm:text-xs md:text-sm"} font-bold text-white leading-tight`}
+                      >
+                        {site?.welcomeOffer}
+                      </div>
+                    </div>
 
-                  {/* Terms */}
-                  <div className="text-[8px] md:text-[9px] text-gray-400 leading-tight bg-gray-900/50 border border-gray-700 p-2 min-h-[50px] md:min-h-[60px] rounded">
-                    {site?.terms.slice(0, 120)}...
+                    {/* Rating Stars - Mobile: Right side, Desktop: Center */}
+                    <div className="flex flex-col items-center sm:my-2">
+                      <div className="flex items-center gap-0.5 mb-1">
+                        {[...Array(5)].map((_, i) => (
+                          <Star
+                            key={i}
+                            className={`${isCenter ? "w-2 sm:w-3 md:w-4 h-2 sm:h-3 md:h-4" : "w-1.5 sm:w-2.5 md:w-3 h-1.5 sm:h-2.5 md:h-3"} fill-yellow-400 text-yellow-400`}
+                          />
+                        ))}
+                      </div>
+                      <span
+                        className={`text-white font-bold ${isCenter ? "text-xs sm:text-sm md:text-base" : "text-[10px] sm:text-xs md:text-sm"}`}
+                      >
+                        {site?.rating.toFixed(1)}/10
+                      </span>
+                    </div>
+
+                    {/* CTA Button - Mobile: Right side, Desktop: Bottom */}
+                    <div className="flex-shrink-0">
+                      <Link href={site?.link || "#"} target="_blank" rel="noopener noreferrer">
+                        <Button
+                          className={`bg-green-600 hover:bg-green-700 text-white font-bold ${
+                            isCenter
+                              ? "py-1 sm:py-2 px-2 sm:px-4 text-[10px] sm:text-xs md:text-sm"
+                              : "py-0.5 sm:py-1.5 px-1.5 sm:px-3 text-[9px] sm:text-xs"
+                          } rounded shadow-lg transition-all duration-300 hover:scale-105 whitespace-nowrap`}
+                          onClick={() => setIsOpen(false)}
+                        >
+                          FÅ BONUS
+                        </Button>
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -142,14 +139,12 @@ export function EditorChoiceModal({ bettingSites }: EditorChoiceModalProps) {
         </div>
 
         {/* Footer */}
-        <div className="text-center mt-6">
-          <div className="bg-black/80 backdrop-blur-sm border-2 border-yellow-400 p-3 max-w-xl mx-auto rounded-lg">
-            <p className="text-white text-sm font-medium mb-1">
-              18+ Kun | Vilkår & Betingelser Gælder | spillemyndigheden.dk
+        <div className="text-center mt-2 sm:mt-4 px-2 flex-shrink-0">
+          <div className="bg-black/80 backdrop-blur-sm border-2 border-yellow-400 p-1.5 sm:p-2 rounded-lg">
+            <p className="text-white text-[10px] sm:text-xs font-medium mb-0.5 sm:mb-1">
+              18+ Kun | spillemyndigheden.dk
             </p>
-            <p className="text-gray-300 text-xs">
-              Licenserede Danske Operatører | Spil Ansvarligt | Spil Kan Være Vanedannende
-            </p>
+            <p className="text-gray-300 text-[8px] sm:text-[10px]">Spil Ansvarligt | Spil Kan Være Vanedannende</p>
           </div>
         </div>
       </div>

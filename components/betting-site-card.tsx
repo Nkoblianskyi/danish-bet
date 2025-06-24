@@ -1,6 +1,4 @@
 "use client"
-
-import type React from "react"
 import { useState, useEffect } from "react"
 import { Star } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -13,8 +11,6 @@ interface SiteCardProps {
 }
 
 export function BettingSiteCard({ site, rank }: SiteCardProps) {
-  const [isTermsExpanded, setIsTermsExpanded] = useState(false)
-  const [showReadMore, setShowReadMore] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
 
   useEffect(() => {
@@ -26,20 +22,8 @@ export function BettingSiteCard({ site, rank }: SiteCardProps) {
     return () => window.removeEventListener("resize", checkMobile)
   }, [])
 
-  useEffect(() => {
-    const limit = isMobile ? 215 : 350
-    const shouldShow = site.terms.length > limit
-    setShowReadMore(shouldShow)
-  }, [site.terms, isMobile])
-
   const formatVotes = (votes: number) => {
     return votes.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
-  }
-
-  const handleTermsClick = (e: React.MouseEvent) => {
-    e.preventDefault()
-    e.stopPropagation()
-    setIsTermsExpanded(!isTermsExpanded)
   }
 
   const getRankBadgeColor = (rank: number) => {
@@ -47,7 +31,7 @@ export function BettingSiteCard({ site, rank }: SiteCardProps) {
       case 1:
         return "bg-tech-gold text-tech-black"
       case 2:
-        return "bg-tech-red text-tech-white"
+        return "text-tech-white" // Keep text white, background will be set via inline style
       case 3:
         return "bg-tech-black text-tech-gold border border-tech-gold"
       default:
@@ -74,7 +58,7 @@ export function BettingSiteCard({ site, rank }: SiteCardProps) {
     <div className="block animate-fade-in">
       {/* Desktop Layout */}
       <div
-        className={`hidden lg:block tech-card ${rank === 1 ? "border-2 border-tech-gold tech-glow" : "border border-tech-gray-300"} relative overflow-hidden cursor-pointer mb-2`}
+        className={`hidden lg:block tech-card ${rank === 1 ? "border-2 border-tech-gold tech-glow" : "border border-tech-gray-300"} relative overflow-hidden cursor-pointer mb-2 mx-4`}
       >
         <Link href={site.link} target="_blank" rel="noopener noreferrer" className="block">
           {/* Main Content */}
@@ -89,13 +73,18 @@ export function BettingSiteCard({ site, rank }: SiteCardProps) {
                 />
                 {/* Tech corner accents */}
                 <div className="absolute -top-1 -left-1 w-2 h-2 bg-tech-gold"></div>
-                <div className="absolute -top-1 -right-1 w-2 h-2 bg-tech-red"></div>
+                <div className="absolute -top-1 -right-1 w-2 h-2" style={{ backgroundColor: "#C8102E" }}></div>
               </div>
             </div>
 
             {/* Rank and Status Badges - positioned absolutely */}
             <div className="absolute top-0 left-0 flex gap-0 z-30">
-              <div className={`tech-rank px-3 py-1 text-xs font-bold ${getRankBadgeColor(rank)}`}>#{rank}</div>
+              <div
+                className={`tech-rank px-3 py-1 text-xs font-bold ${getRankBadgeColor(rank)}`}
+                style={rank === 2 ? { backgroundColor: "#C8102E" } : {}}
+              >
+                #{rank}
+              </div>
               {rank <= 4 && (
                 <div className="tech-badge px-3 py-1 text-xs font-bold bg-tech-gold text-tech-black">
                   {getRankLabel(rank)}
@@ -107,7 +96,7 @@ export function BettingSiteCard({ site, rank }: SiteCardProps) {
             <div className="flex-[0_0_25%] px-2 text-center flex flex-col justify-center h-full relative z-10">
               <div className="text-xs text-tech-gray-600 uppercase font-bold mb-1 tech-subheading">VELKOMSTBONUS</div>
               <div className="text-lg xl:text-xl font-bold text-tech-black mb-1 tech-heading">{site.bonus}</div>
-              <div className="text-lg xl:text-xl font-bold text-tech-red tech-heading">{site.welcomeOffer}</div>
+              <div className="text-lg xl:text-xl font-bold text-tech-black tech-heading">{site.welcomeOffer}</div>
             </div>
 
             {/* RATING - 12% */}
@@ -139,7 +128,9 @@ export function BettingSiteCard({ site, rank }: SiteCardProps) {
             {/* ACCESS - 13% */}
             <div className="flex-[0_0_13%] pl-2 text-center flex flex-col justify-center items-center h-full relative z-10">
               <div className="w-full">
-                <Button className="tech-button w-full h-12 mb-2 text-sm font-bold tech-subheading">FÅ BONUS</Button>
+                <Button className="bg-green-600 hover:bg-green-700 text-white border-2 border-green-800 w-full h-12 mb-2 text-sm font-bold tech-subheading shadow-lg">
+                  FÅ BONUS
+                </Button>
                 <div className="text-xs text-tech-gray-600 font-bold tech-subheading">
                   BESØG {site.name.toUpperCase()}
                 </div>
@@ -148,30 +139,24 @@ export function BettingSiteCard({ site, rank }: SiteCardProps) {
           </div>
         </Link>
 
-        {/* Terms section */}
-        <div className="bg-tech-gray-100 border-t-2 border-tech-gray-300 text-tech-gray-700 py-3 px-6">
-          <div className="text-center relative">
-            <div className="absolute left-0 top-1/2 w-4 h-px bg-tech-gold"></div>
-            <div className="absolute right-0 top-1/2 w-4 h-px bg-tech-red"></div>
-            <div
-              className={`text-[10px] leading-relaxed transition-all duration-300 tech-body ${!isTermsExpanded ? "line-clamp-2" : ""}`}
+        {/* Footer Disclaimer */}
+        <div className="px-6 pb-4 border-t border-neutral-200 bg-neutral-50">
+          <p className="text-xs text-neutral-500 text-center py-2">
+            18+ | Sikker spil |{" "}
+            <a
+              href="https://spillemyndigheden.dk/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-brand-600 hover:text-brand-700 underline"
             >
-              {site.terms}
-            </div>
-            {showReadMore && (
-              <button
-                onClick={handleTermsClick}
-                className="text-tech-black hover:text-tech-red font-bold mt-2 text-[10px] tech-subheading transition-colors border-b border-tech-black hover:border-tech-red"
-              >
-                {isTermsExpanded ? "VIS MINDRE" : "VIS MERE"}
-              </button>
-            )}
-          </div>
+              spillemyndigheden.dk
+            </a>
+          </p>
         </div>
       </div>
 
       {/* Tablet Layout */}
-      <div className="hidden md:block lg:hidden tech-card border border-tech-gray-300 relative overflow-hidden cursor-pointer mb-2">
+      <div className="hidden md:block lg:hidden tech-card border border-tech-gray-300 relative overflow-hidden cursor-pointer mb-2 mx-4">
         <Link href={site.link} target="_blank" rel="noopener noreferrer" className="block">
           <div className={`pt-4 pb-4 ${rank <= 4 ? "pl-8 pr-4" : "px-4"} bg-tech-white relative`}>
             <div className="grid grid-cols-12 gap-2 items-center relative z-10">
@@ -180,13 +165,18 @@ export function BettingSiteCard({ site, rank }: SiteCardProps) {
                 <div className="bg-tech-white border-2 border-tech-black p-2 shadow-tech-soft w-full mt-6 relative">
                   <img src={site.logo || "/placeholder.svg"} alt={site.name} className="w-full h-12 object-contain" />
                   <div className="absolute -top-1 -left-1 w-1 h-1 bg-tech-gold"></div>
-                  <div className="absolute -top-1 -right-1 w-1 h-1 bg-tech-red"></div>
+                  <div className="absolute -top-1 -right-1 w-1 h-1" style={{ backgroundColor: "#C8102E" }}></div>
                 </div>
               </div>
 
               {/* Badges */}
               <div className="absolute top-0 left-0 flex gap-0 z-30">
-                <div className={`tech-rank px-2 py-0.5 text-xs font-bold ${getRankBadgeColor(rank)}`}>#{rank}</div>
+                <div
+                  className={`tech-rank px-2 py-0.5 text-xs font-bold ${getRankBadgeColor(rank)}`}
+                  style={rank === 2 ? { backgroundColor: "#C8102E" } : {}}
+                >
+                  #{rank}
+                </div>
                 {rank <= 4 && (
                   <div className="tech-badge px-2 py-0.5 text-xs font-bold bg-tech-gold text-tech-black">
                     {getRankLabel(rank)}
@@ -198,7 +188,7 @@ export function BettingSiteCard({ site, rank }: SiteCardProps) {
               <div className="col-span-3 text-center">
                 <div className="text-xs text-tech-gray-600 uppercase font-bold mb-1 tech-subheading">BONUS</div>
                 <div className="text-sm font-bold text-tech-black mb-1 tech-heading">{site.bonus}</div>
-                <div className="text-sm font-bold text-tech-red tech-heading">{site.welcomeOffer}</div>
+                <div className="text-sm font-bold text-tech-black tech-heading">{site.welcomeOffer}</div>
               </div>
 
               {/* Score - 2 колонки */}
@@ -226,42 +216,43 @@ export function BettingSiteCard({ site, rank }: SiteCardProps) {
 
               {/* Button - 2 колонки */}
               <div className="col-span-2 text-center">
-                <Button className="tech-button px-2 py-1 text-xs w-full font-bold tech-subheading">FÅ BONUS</Button>
+                <Button className="bg-green-600 hover:bg-green-700 text-white border-2 border-green-800 px-2 py-1 text-xs w-full font-bold tech-subheading shadow-lg">
+                  FÅ BONUS
+                </Button>
               </div>
             </div>
           </div>
         </Link>
 
-        {/* Terms */}
-        <div
-          className={`bg-tech-gray-100 border-t-2 border-tech-gray-300 text-tech-gray-700 py-2 ${rank <= 4 ? "pl-8 pr-4" : "px-4"}`}
-        >
-          <div className="text-center">
-            <div
-              className={`text-[10px] leading-relaxed transition-all duration-300 tech-body ${!isTermsExpanded ? "line-clamp-2" : ""}`}
+        {/* Footer Disclaimer */}
+        <div className={`px-4 pb-4 border-t border-neutral-200 bg-neutral-50 ${rank <= 4 ? "pl-8 pr-4" : "px-4"}`}>
+          <p className="text-xs text-neutral-500 text-center py-2">
+            18+ | Sikker spil |{" "}
+            <a
+              href="https://spillemyndigheden.dk/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-brand-600 hover:text-brand-700 underline"
             >
-              {site.terms}
-            </div>
-            {showReadMore && (
-              <button
-                onClick={handleTermsClick}
-                className="text-tech-black hover:text-tech-red font-bold mt-1 text-[10px] tech-subheading border-b border-tech-black hover:border-tech-red"
-              >
-                {isTermsExpanded ? "VIS MINDRE" : "VIS MERE"}
-              </button>
-            )}
-          </div>
+              spillemyndigheden.dk
+            </a>
+          </p>
         </div>
       </div>
 
       {/* Mobile Layout */}
-      <div className="md:hidden tech-card border border-tech-gray-300 relative overflow-hidden cursor-pointer mb-2">
+      <div className="md:hidden tech-card border border-tech-gray-300 relative overflow-hidden cursor-pointer mb-2 mx-2">
         <Link href={site.link} target="_blank" rel="noopener noreferrer" className="block">
           {/* Main Content */}
           <div className="p-3 relative bg-tech-white">
             {/* Badges */}
             <div className="absolute top-0 left-0 flex gap-0 z-30">
-              <div className={`tech-rank px-1.5 py-0.5 text-xs font-bold ${getRankBadgeColor(rank)}`}>#{rank}</div>
+              <div
+                className={`tech-rank px-1.5 py-0.5 text-xs font-bold ${getRankBadgeColor(rank)}`}
+                style={rank === 2 ? { backgroundColor: "#C8102E" } : {}}
+              >
+                #{rank}
+              </div>
               {rank <= 4 && (
                 <div className="tech-badge px-1.5 py-0.5 text-xs font-bold bg-tech-gold text-tech-black">
                   {getRankLabel(rank).slice(0, 4)}
@@ -276,7 +267,7 @@ export function BettingSiteCard({ site, rank }: SiteCardProps) {
                 <div className="bg-tech-white border-2 border-tech-black p-2 shadow-tech-soft relative">
                   <img src={site.logo || "/placeholder.svg"} alt={site.name} className="h-8 w-auto object-contain" />
                   <div className="absolute -top-1 -left-1 w-1 h-1 bg-tech-gold"></div>
-                  <div className="absolute -bottom-1 -right-1 w-1 h-1 bg-tech-red"></div>
+                  <div className="absolute -bottom-1 -right-1 w-1 h-1" style={{ backgroundColor: "#C8102E" }}></div>
                 </div>
               </div>
 
@@ -284,12 +275,14 @@ export function BettingSiteCard({ site, rank }: SiteCardProps) {
               <div className="text-center">
                 <div className="text-xs text-tech-gray-600 uppercase font-bold mb-1 tech-subheading">BONUS</div>
                 <div className="text-sm font-bold text-tech-black leading-tight mb-1 tech-heading">{site.bonus}</div>
-                <div className="text-sm font-bold text-tech-red leading-tight tech-heading">{site.welcomeOffer}</div>
+                <div className="text-sm font-bold text-tech-black leading-tight tech-heading">{site.welcomeOffer}</div>
               </div>
 
               {/* Button Column */}
               <div className="flex justify-center">
-                <Button className="tech-button px-2 py-1 text-xs w-full font-bold tech-subheading">FÅ BONUS</Button>
+                <Button className="bg-green-600 hover:bg-green-700 text-white border-2 border-green-800 px-2 py-1 text-xs w-full font-bold tech-subheading shadow-lg">
+                  FÅ BONUS
+                </Button>
               </div>
             </div>
 
@@ -318,23 +311,19 @@ export function BettingSiteCard({ site, rank }: SiteCardProps) {
           </div>
         </Link>
 
-        {/* Terms */}
-        <div className="bg-tech-gray-100 border-t-2 border-tech-gray-300 py-2 px-3">
-          <div className="text-center">
-            <div
-              className={`text-tech-gray-700 text-[9px] leading-relaxed transition-all duration-300 tech-body ${!isTermsExpanded ? "line-clamp-2" : ""}`}
+        {/* Footer Disclaimer */}
+        <div className="px-3 pb-4 border-t border-neutral-200 bg-neutral-50">
+          <p className="text-xs text-neutral-500 text-center py-2">
+            18+ | Sikker spil |{" "}
+            <a
+              href="https://spillemyndigheden.dk/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-brand-600 hover:text-brand-700 underline"
             >
-              {site.terms}
-            </div>
-            {showReadMore && (
-              <button
-                onClick={handleTermsClick}
-                className="text-tech-black hover:text-tech-red font-bold text-[9px] mt-1 tech-subheading border-b border-tech-black hover:border-tech-red"
-              >
-                {isTermsExpanded ? "VIS MINDRE" : "VIS MERE"}
-              </button>
-            )}
-          </div>
+              spillemyndigheden.dk
+            </a>
+          </p>
         </div>
       </div>
     </div>

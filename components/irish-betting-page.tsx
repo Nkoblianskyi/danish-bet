@@ -17,7 +17,7 @@ export default function IrishBettingPage() {
 
   return (
     <>
-      {/* <PageLayoutWrapper> */}
+      <PageLayoutWrapper>
         <MainHeroSection
           onAdvertiserModalOpen={() => setIsAdvertiserModalOpen(true)}
           onTermsModalOpen={() => setIsTermsModalOpen(true)}
@@ -27,7 +27,7 @@ export default function IrishBettingPage() {
         <BettingSitesList />
 
         <InformationalContent />
-      {/* </PageLayoutWrapper> */}
+      </PageLayoutWrapper>
 
       {/* Тільки одна модалка - Editor's Choice */}
       <EditorChoiceModal bettingSites={bettingSites} />
