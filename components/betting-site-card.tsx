@@ -216,14 +216,14 @@ export function BettingSiteCard({ site, rank }: SiteCardProps) {
             {/* Badges */}
             <div className="absolute top-0 left-0 flex gap-0 z-30">
               <div
-                className="tech-rank px-2 py-0.5 text-sm font-bold !text-white"
+                className="tech-rank px-3 py-0.5 text-sm font-bold !text-white"
                 style={{ backgroundColor: "#C8102E" }}
               >
                 #{rank}
               </div>
               {rank <= 4 && (
                 <div
-                  className="tech-badge px-1.5 py-0.5 text-xs font-bold !text-white whitespace-nowrap"
+                  className="tech-badge px-3 py-1 text-xs font-bold !text-white whitespace-nowrap"
                   style={{ backgroundColor: "#C8102E" }}
                 >
                   {getRankLabel(rank)}
