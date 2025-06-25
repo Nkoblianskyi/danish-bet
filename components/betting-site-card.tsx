@@ -254,15 +254,15 @@ export function BettingSiteCard({ site, rank }: SiteCardProps) {
             {/* Rating Row */}
             <div className="grid grid-cols-3 items-center justify-center gap-1 mt-1 pt-1 border-t-2 border-tech-gray-200 relative z-10">
               <div className="text-center">
-                <div className="text-lg font-bold leading-none mb-1 tech-heading" style={{ color: "#C8102E" }}>
+                <div className="text-xl font-bold leading-none mb-1 mt-1.5 tech-heading" style={{ color: "#C8102E" }}>
                   {site.rating.toFixed(1)}
                 </div>
                 <div className="text-[8px] text-tech-gray-600 font-bold tech-subheading">SCORE</div>
               </div>
               <div className="text-center">
-                <div className="flex justify-center gap-0.5 mt-1 mb-1">
+                <div className="flex justify-center gap-0.5 mt-2 mb-1">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-2.5 h-2.5 fill-current" style={{ color: "#C8102E" }} />
+                    <Star key={i} className="w-4 h-4 fill-current" style={{ color: "#C8102E" }} />
                   ))}
                 </div>
                 <div className="text-[10px] text-tech-gray-600 font-bold tech-subheading">({formatVotes(site.votes)})</div>
