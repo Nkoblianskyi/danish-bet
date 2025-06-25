@@ -232,7 +232,7 @@ export function BettingSiteCard({ site, rank }: SiteCardProps) {
             </div>
 
             {/* Content Grid */}
-            <div className="grid grid-cols-3 gap-2 items-center mt-4 relative z-10">
+            <div className="grid grid-cols-2 gap-2 items-center mt-5 relative z-10">
               {/* Logo Column */}
               <div className="flex justify-center">
                 <div className="bg-tech-white border-2 border-tech-black p-2 shadow-tech-soft relative">
@@ -249,16 +249,10 @@ export function BettingSiteCard({ site, rank }: SiteCardProps) {
                 <div className="text-lg font-bold text-tech-black leading-tight tech-heading">{site.welcomeOffer}</div>
               </div>
 
-              {/* Button Column */}
-              <div className="flex justify-center">
-                <Button className="bg-green-600 hover:bg-green-700 text-white border-2 border-green-800 px-4 py-2 text-sm w-full font-bold tech-subheading shadow-lg">
-                  FÅ BONUS
-                </Button>
-              </div>
             </div>
 
             {/* Rating Row */}
-            <div className="grid grid-cols-2 gap-1 mt-1 pt-1 border-t-2 border-tech-gray-200 relative z-10">
+            <div className="grid grid-cols-3 items-center justify-center gap-1 mt-1 pt-1 border-t-2 border-tech-gray-200 relative z-10">
               <div className="text-center">
                 <div className="text-lg font-bold leading-none mb-1 tech-heading" style={{ color: "#C8102E" }}>
                   {site.rating.toFixed(1)}
@@ -272,6 +266,13 @@ export function BettingSiteCard({ site, rank }: SiteCardProps) {
                   ))}
                 </div>
                 <div className="text-[10px] text-tech-gray-600 font-bold tech-subheading">({formatVotes(site.votes)})</div>
+              </div>
+
+              {/* Button Column */}
+              <div className="flex justify-center">
+                <Button className="bg-green-600 hover:bg-green-700 text-white border-2 border-green-800 px-4 py-2 text-sm w-full font-bold tech-subheading shadow-lg">
+                  FÅ BONUS
+                </Button>
               </div>
             </div>
           </div>

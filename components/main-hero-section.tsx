@@ -56,7 +56,7 @@ export function MainHeroSection({ onAdvertiserModalOpen, onTermsModalOpen }: Her
                 <div className="mt-8">
                   <div className="flex flex-wrap justify-center items-center gap-4 lg:gap-6">
                     <div className="flex items-center gap-2 text-black px-3 py-2">
-                      <Image src="/flag.png" alt="Logo" width={20} height={20} className="w-5 h-5" />
+                      <Image src="/denmark-flag-icon.webp" alt="Logo" width={20} height={20} className="w-5 h-5" />
                       <span className="text-xs font-bold tech-subheading">LICENSERET</span>
                     </div>
                     <div className="flex items-center gap-2 text-black px-3 py-2">
@@ -86,7 +86,9 @@ export function MainHeroSection({ onAdvertiserModalOpen, onTermsModalOpen }: Her
       <div className="lg:hidden mb-2">
         <div className="bg-white/70 shadow-lg max-w-[1150px] mx-auto rounded-lg">
           <div className="px-4 py-4 text-center">
-            <h1 className="text-2x md:text-3xl font-bold mb-3 text-black">Bedste <span style={{ color: "#C8102E" }}>Danske</span> Betting Sider</h1>
+            <h1 className="text-2x md:text-3xl font-bold mb-3 text-black">
+              Bedste <span style={{ color: "#C8102E" }}>Danske</span> Betting Sider
+            </h1>
 
             <div className="w-16 h-0.5 bg-green-600 mx-auto mb-4"></div>
 
@@ -96,22 +98,18 @@ export function MainHeroSection({ onAdvertiserModalOpen, onTermsModalOpen }: Her
 
             {/* Trust Indicators */}
             <div className="mt-6">
-              <div className="flex flex-wrap justify-center items-center gap-3">
-                <div className="flex items-center gap-2 text-black px-2 py-1">
-                  <Image src="/flag.png" alt="Logo" width={20} height={20} className="w-5 h-5" />
-                  <span className="text-xs font-bold tech-subheading">LICENSERET</span>
+              <div className="flex justify-center items-center gap-1 sm:gap-3">
+                <div className="flex items-center gap-1 sm:gap-2 text-black px-1 sm:px-2 py-1 flex-shrink-0">
+                  <Image src="/denmark-flag-icon.webp" alt="Logo" width={20} height={20} className="w-5 h-5" />
+                  <span className="text-[10px] sm:text-xs font-bold tech-subheading">LICENSERET</span>
                 </div>
-                <div className="flex items-center gap-2 text-black px-2 py-1">
+                <div className="flex items-center gap-1 sm:gap-2 text-black px-1 sm:px-2 py-1 flex-shrink-0">
                   <Award className="w-3 h-3 text-black" />
-                  <span className="text-xs font-bold tech-subheading">VERIFICERET</span>
+                  <span className="text-[10px] sm:text-xs font-bold tech-subheading">VERIFICERET</span>
                 </div>
-                <div className="flex items-center gap-2 text-black px-2 py-1">
+                <div className="flex items-center gap-1 sm:gap-2 text-black px-1 sm:px-2 py-1 flex-shrink-0">
                   <TrendingUp className="w-3 h-3 text-black" />
-                  <span className="text-xs font-bold tech-subheading">OPDATERET</span>
-                </div>
-                <div className="flex items-center gap-2 text-black px-2 py-1">
-                  <Zap className="w-3 h-3 text-black" />
-                  <span className="text-xs font-bold tech-subheading">ØJEBLIKKELIG</span>
+                  <span className="text-[10px] sm:text-xs font-bold tech-subheading">OPDATERET</span>
                 </div>
               </div>
             </div>

@@ -112,7 +112,7 @@ export function MainSiteFooter() {
             </h4>
             <div className="space-y-4">
               <div className="flex items-center gap-3 text-tech-gray-300 bg-tech-white/5 p-3 border border-tech-gold/20">
-                <Image src="/flag.png" alt="Logo" width={20} height={20} className="w-5 h-5" />
+                <Image src="/denmark-flag-icon.webp" alt="Logo" width={20} height={20} className="w-5 h-5" />
                 <span className="text-sm tech-subheading">LICENSERET & REGULERET</span>
               </div>
               <div
