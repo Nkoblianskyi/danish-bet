@@ -64,22 +64,22 @@ export function EditorChoiceModal({ bettingSites }: EditorChoiceModalProps) {
                 key={site?.id || index}
                 className={`overflow-hidden transition-all duration-300 hover:scale-105 flex flex-col ${
                   isCenter
-                    ? "w-full sm:w-[200px] md:w-[240px] lg:w-[280px] h-[140px] sm:h-[320px] md:h-[380px] border-4 border-red-600 shadow-2xl"
-                    : "w-full sm:w-[180px] md:w-[220px] lg:w-[260px] h-[120px] sm:h-[300px] md:h-[360px] border-4 border-red-500 shadow-xl"
+                    ? "w-full sm:w-[200px] md:w-[240px] lg:w-[280px] h-[160px] sm:h-[320px] md:h-[380px] border-4 border-red-600 shadow-2xl"
+                    : "w-full sm:w-[180px] md:w-[220px] lg:w-[260px] h-[140px] sm:h-[300px] md:h-[360px] border-4 border-red-500 shadow-xl"
                 } bg-black/90 backdrop-blur-sm rounded-lg`}
               >
                 {/* Logo section */}
-                <div className="bg-gradient-to-b from-gray-800 to-gray-900 h-14 sm:h-20 md:h-24 flex items-center justify-center p-2 sm:p-3 border-b-2 border-yellow-400 flex-shrink-0">
+                <div className="bg-gradient-to-b from-gray-800 to-gray-900 h-16 sm:h-24 md:h-26 flex items-center justify-center p-2 sm:p-3 border-b-2 border-yellow-400 flex-shrink-0">
                   <div className="flex items-center gap-1">
                     <img
                       src={site?.logo || "/placeholder.svg"}
                       alt={site?.name || "Site"}
-                      className="h-8 sm:h-14 md:h-16 w-auto object-contain"
+                      className="h-14 sm:h-20 md:h-24 w-auto object-contain"
                     />
                   </div>
                 </div>
                 {/* Content */}
-                <div className="bg-black/90 text-white flex-1 flex flex-col p-1 sm:p-2 md:p-3 text-center justify-between min-h-0">
+                <div className="bg-black/90 text-white flex-1 flex flex-col p-1 sm:p-2 md:p-3 text-center justify-between min-h-1">
                   {/* Mobile: Horizontal layout, Desktop: Vertical */}
                   <div className="flex sm:flex-col items-center sm:items-center justify-center sm:justify-center h-full">
                     {/* Bonus Amount - Centered */}

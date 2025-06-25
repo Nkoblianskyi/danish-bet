@@ -40,7 +40,7 @@ export function MainHeroSection({ onAdvertiserModalOpen, onTermsModalOpen }: Her
               {/* Main Heading */}
               <div className="mb-6">
                 <h1 className="text-3xl xl:text-4xl font-bold mb-3 leading-tight text-black">
-                  Bedste Danske Betting Sider
+                  Bedste <span style={{ color: "#C8102E" }}>Danske</span> Betting Sider
                 </h1>
 
                 <h2 className="text-lg xl:text-xl font-medium mb-4 text-black">Ekspert Anmeldelser & Analyse</h2>
@@ -83,16 +83,15 @@ export function MainHeroSection({ onAdvertiserModalOpen, onTermsModalOpen }: Her
       </div>
 
       {/* Tablet & Mobile Hero */}
-      <div className="lg:hidden mb-6">
+      <div className="lg:hidden mb-2">
         <div className="bg-white/70 shadow-lg max-w-[1150px] mx-auto rounded-lg">
-          <div className="px-4 py-6 text-center">
-            <h1 className="text-2xl md:text-3xl font-bold mb-3 text-black">Bedste Danske Betting Sider</h1>
-            <h2 className="text-sm md:text-base font-medium mb-4 text-black">Ekspert Anmeldelser</h2>
+          <div className="px-4 py-4 text-center">
+            <h1 className="text-2x md:text-3xl font-bold mb-3 text-black">Bedste <span style={{ color: "#C8102E" }}>Danske</span> Betting Sider</h1>
 
             <div className="w-16 h-0.5 bg-green-600 mx-auto mb-4"></div>
 
-            <p className="text-sm text-black mb-4 leading-relaxed">
-              Uafhængig analyse af Danmarks bedste betting platforme
+            <p className="text-sm text-black mb-2 leading-relaxed">
+              Uafhængig analyse af Danmarks bedste betting platformel
             </p>
 
             {/* Trust Indicators */}

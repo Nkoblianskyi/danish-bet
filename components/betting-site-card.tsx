@@ -71,7 +71,7 @@ export function BettingSiteCard({ site, rank }: SiteCardProps) {
               </div>
               {rank <= 4 && (
                 <div
-                  className="tech-badge px-4 py-1 text-xs font-bold !text-white"
+                  className="tech-badge px-2 sm:px-3 md:px-4 py-1 text-xs font-bold !text-white whitespace-nowrap"
                   style={{ backgroundColor: "#C8102E" }}
                 >
                   {getRankLabel(rank)}
@@ -164,7 +164,7 @@ export function BettingSiteCard({ site, rank }: SiteCardProps) {
                 </div>
                 {rank <= 4 && (
                   <div
-                    className="tech-badge px-3 py-0.5 text-sm font-bold !text-white"
+                    className="tech-badge px-2 py-0.5 text-xs font-bold !text-white whitespace-nowrap"
                     style={{ backgroundColor: "#C8102E" }}
                   >
                     {getRankLabel(rank)}
@@ -206,28 +206,13 @@ export function BettingSiteCard({ site, rank }: SiteCardProps) {
             </div>
           </div>
         </Link>
-
-        {/* Footer Disclaimer */}
-        <div className={`px-4 pb-4 border-t border-neutral-200 bg-neutral-50 ${rank <= 4 ? "pl-8 pr-4" : "px-4"}`}>
-          <p className="text-xs text-neutral-500 text-center py-2">
-            18+ | Sikker spil |{" "}
-            <a
-              href="https://spillemyndigheden.dk/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-brand-600 hover:text-brand-700 underline"
-            >
-              spillemyndigheden.dk
-            </a>
-          </p>
-        </div>
       </div>
 
       {/* Mobile Layout */}
-      <div className="md:hidden tech-card  relative overflow-hidden cursor-pointer mb-2 mx-2">
+      <div className="md:hidden tech-card  relative overflow-hidden cursor-pointer mb-1 mx-2">
         <Link href={site.link} target="_blank" rel="noopener noreferrer" className="block">
           {/* Main Content */}
-          <div className="p-3 relative bg-tech-white">
+          <div className="p-2 relative bg-tech-white">
             {/* Badges */}
             <div className="absolute top-0 left-0 flex gap-0 z-30">
               <div
@@ -238,16 +223,16 @@ export function BettingSiteCard({ site, rank }: SiteCardProps) {
               </div>
               {rank <= 4 && (
                 <div
-                  className="tech-badge px-2 py-0.5 text-sm font-bold !text-white"
+                  className="tech-badge px-1.5 py-0.5 text-xs font-bold !text-white whitespace-nowrap"
                   style={{ backgroundColor: "#C8102E" }}
                 >
-                  {getRankLabel(rank).slice(0, 6)}
+                  {getRankLabel(rank)}
                 </div>
               )}
             </div>
 
             {/* Content Grid */}
-            <div className="grid grid-cols-3 gap-2 items-center mt-8 relative z-10">
+            <div className="grid grid-cols-3 gap-2 items-center mt-4 relative z-10">
               {/* Logo Column */}
               <div className="flex justify-center">
                 <div className="bg-tech-white border-2 border-tech-black p-2 shadow-tech-soft relative">
@@ -266,27 +251,27 @@ export function BettingSiteCard({ site, rank }: SiteCardProps) {
 
               {/* Button Column */}
               <div className="flex justify-center">
-                <Button className="bg-green-600 hover:bg-green-700 text-white border-2 border-green-800 px-2 py-1 text-xs w-full font-bold tech-subheading shadow-lg">
+                <Button className="bg-green-600 hover:bg-green-700 text-white border-2 border-green-800 px-4 py-2 text-sm w-full font-bold tech-subheading shadow-lg">
                   FÅ BONUS
                 </Button>
               </div>
             </div>
 
             {/* Rating Row */}
-            <div className="grid grid-cols-2 gap-2 mt-3 pt-2 border-t-2 border-tech-gray-200 relative z-10">
+            <div className="grid grid-cols-2 gap-1 mt-1 pt-1 border-t-2 border-tech-gray-200 relative z-10">
               <div className="text-center">
                 <div className="text-lg font-bold leading-none mb-1 tech-heading" style={{ color: "#C8102E" }}>
                   {site.rating.toFixed(1)}
                 </div>
-                <div className="text-xs text-tech-gray-600 font-bold tech-subheading">SCORE</div>
+                <div className="text-[8px] text-tech-gray-600 font-bold tech-subheading">SCORE</div>
               </div>
               <div className="text-center">
-                <div className="flex justify-center gap-0.5 mb-1">
+                <div className="flex justify-center gap-0.5 mt-1 mb-1">
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} className="w-2.5 h-2.5 fill-current" style={{ color: "#C8102E" }} />
                   ))}
                 </div>
-                <div className="text-xs text-tech-gray-600 font-bold tech-subheading">({formatVotes(site.votes)})</div>
+                <div className="text-[10px] text-tech-gray-600 font-bold tech-subheading">({formatVotes(site.votes)})</div>
               </div>
             </div>
           </div>

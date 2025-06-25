@@ -15,11 +15,10 @@ export function MainSiteHeader() {
             </div>
             <div className="text-center">
               <h1 className="text-sm font-bold leading-tight tech-heading">
-                <span className="text-tech-gold">BETTING</span>
+                <span className="text-tech-white">BETTING</span>
                 <span className="text-tech-white"> BEDSTE</span>
                 <span style={{ color: "#C8102E" }}> DANSKE</span>
               </h1>
-              <p className="text-xs text-tech-gray-300 font-medium tech-subheading">EKSPERT ANALYSE 2025</p>
             </div>
           </Link>
           <div className="absolute right-0 top-0 bottom-0 w-1" style={{ backgroundColor: "#C8102E" }}></div>
