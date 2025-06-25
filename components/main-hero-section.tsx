@@ -39,8 +39,8 @@ export function MainHeroSection({ onAdvertiserModalOpen, onTermsModalOpen }: Her
             <div className="relative z-10 text-center">
               {/* Main Heading */}
               <div className="mb-6">
-                <h1 className="text-3xl xl:text-4xl font-bold mb-3 leading-tight text-black">
-                  Bedste <span style={{ color: "#C8102E" }}>Danske</span> Betting Sider
+                <h1 className="text-3xl xl:text-4xl font-bold mb-3 leading-tight text-black uppercase">
+                  Bedste <span style={{ color: "#C8102E" }}>Danske</span> Betting Sider 2025
                 </h1>
 
                 <h2 className="text-lg xl:text-xl font-medium mb-4 text-black">Ekspert Anmeldelser & Analyse</h2>

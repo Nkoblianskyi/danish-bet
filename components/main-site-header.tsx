@@ -3,7 +3,7 @@ import Image from "next/image"
 
 export function MainSiteHeader() {
   return (
-    <header className="tech-header  sticky top-0 z-40">
+    <header className="bg-black/50 backdrop-blur-sm sticky top-0 z-40">
       {/* Mobile Header */}
       <div className="md:hidden">
         <div className="h-12 flex items-center justify-center px-4 relative">
@@ -27,7 +27,7 @@ export function MainSiteHeader() {
 
       {/* Desktop/Tablet Header */}
       <div className="hidden md:block">
-        <div className="container mx-auto px-4 py-3 max-w-[1150px]">
+        <div className="container mx-auto px-4 py-3 max-w-[1150px] bg-black/50 backdrop-blur-sm">
           <div className="flex items-center justify-center">
             {/* Logo and Brand - Centered */}
             <Link href="/" className="flex items-center gap-4 group">
@@ -43,10 +43,9 @@ export function MainSiteHeader() {
               </div>
               <div>
                 <h1 className="text-xl lg:text-2xl font-bold tech-heading">
-                  <span className="text-tech-white">BETTING</span>
-                  <span className="text-tech-white"> BEDSTE</span>
-                  <span style={{ color: "#C8102E" }}> DANSKE</span>
-                  <span className="text-tech-white"> SIDER</span>
+                  <span className="text-tech-white">Betting</span>
+                  <span className="text-tech-white"> Bedste</span>
+                  <span style={{ color: "#C8102E" }}> Danske</span>
                 </h1>
               </div>
             </Link>
