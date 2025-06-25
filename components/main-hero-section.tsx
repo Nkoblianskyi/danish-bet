@@ -57,19 +57,15 @@ export function MainHeroSection({ onAdvertiserModalOpen, onTermsModalOpen }: Her
                   <div className="flex flex-wrap justify-center items-center gap-4 lg:gap-6">
                     <div className="flex items-center gap-2 text-black px-3 py-2">
                       <Image src="/denmark-flag-icon.webp" alt="Logo" width={20} height={20} className="w-5 h-5" />
-                      <span className="text-xs font-bold tech-subheading">LICENSERET</span>
+                      <span className="text-sm font-bold tech-subheading">DK-Reguleret</span>
                     </div>
                     <div className="flex items-center gap-2 text-black px-3 py-2">
                       <Award className="w-4 h-4 text-black" />
-                      <span className="text-xs font-bold tech-subheading">VERIFICERET</span>
+                      <span className="text-sm font-bold tech-subheading">100% Lovlig</span>
                     </div>
                     <div className="flex items-center gap-2 text-black px-3 py-2">
                       <TrendingUp className="w-4 h-4 text-black" />
-                      <span className="text-xs font-bold tech-subheading">OPDATERET</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-black px-3 py-2">
-                      <Zap className="w-4 h-4 text-black" />
-                      <span className="text-xs font-bold tech-subheading">ØJEBLIKKELIG</span>
+                      <span className="text-sm font-bold tech-subheading">Hurtige Udbetalinge</span>
                     </div>
                   </div>
                 </div>
@@ -101,15 +97,15 @@ export function MainHeroSection({ onAdvertiserModalOpen, onTermsModalOpen }: Her
               <div className="flex justify-center items-center gap-1 sm:gap-3">
                 <div className="flex items-center gap-1 sm:gap-2 text-black px-1 sm:px-2 py-1 flex-shrink-0">
                   <Image src="/denmark-flag-icon.webp" alt="Logo" width={20} height={20} className="w-5 h-5" />
-                  <span className="text-[10px] sm:text-xs font-bold tech-subheading">LICENSERET</span>
+                  <span className="text-[10px] sm:text-xs font-bold tech-subheading">DK-Reguleret</span>
                 </div>
                 <div className="flex items-center gap-1 sm:gap-2 text-black px-1 sm:px-2 py-1 flex-shrink-0">
                   <Award className="w-3 h-3 text-black" />
-                  <span className="text-[10px] sm:text-xs font-bold tech-subheading">VERIFICERET</span>
+                  <span className="text-[10px] sm:text-xs font-bold tech-subheading">100% Lovlig</span>
                 </div>
                 <div className="flex items-center gap-1 sm:gap-2 text-black px-1 sm:px-2 py-1 flex-shrink-0">
                   <TrendingUp className="w-3 h-3 text-black" />
-                  <span className="text-[10px] sm:text-xs font-bold tech-subheading">OPDATERET</span>
+                  <span className="text-[10px] sm:text-xs font-bold tech-subheading">Hurtige Udbetalinger</span>
                 </div>
               </div>
             </div>
