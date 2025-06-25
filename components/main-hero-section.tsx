@@ -43,9 +43,7 @@ export function MainHeroSection({ onAdvertiserModalOpen, onTermsModalOpen }: Her
                   Bedste Danske Betting Sider
                 </h1>
 
-                <h2 className="text-lg xl:text-xl font-medium mb-4 text-black">
-                  Ekspert Anmeldelser & Analyse for {getCurrentMonthYear()}
-                </h2>
+                <h2 className="text-lg xl:text-xl font-medium mb-4 text-black">Ekspert Anmeldelser & Analyse</h2>
 
                 <div className="w-20 h-0.5 bg-green-600 mx-auto mb-4"></div>
 
@@ -75,6 +73,9 @@ export function MainHeroSection({ onAdvertiserModalOpen, onTermsModalOpen }: Her
                     </div>
                   </div>
                 </div>
+                <div className="mt-6 text-center">
+                  <p className="text-sm text-gray-600 font-medium">Opdateret: {getCurrentMonthYear()}</p>
+                </div>
               </div>
             </div>
           </div>
@@ -86,9 +87,7 @@ export function MainHeroSection({ onAdvertiserModalOpen, onTermsModalOpen }: Her
         <div className="bg-white/70 shadow-lg max-w-[1150px] mx-auto rounded-lg">
           <div className="px-4 py-6 text-center">
             <h1 className="text-2xl md:text-3xl font-bold mb-3 text-black">Bedste Danske Betting Sider</h1>
-            <h2 className="text-sm md:text-base font-medium mb-4 text-black">
-              Ekspert Anmeldelser for {getCurrentMonthYear()}
-            </h2>
+            <h2 className="text-sm md:text-base font-medium mb-4 text-black">Ekspert Anmeldelser</h2>
 
             <div className="w-16 h-0.5 bg-green-600 mx-auto mb-4"></div>
 
@@ -116,6 +115,9 @@ export function MainHeroSection({ onAdvertiserModalOpen, onTermsModalOpen }: Her
                   <span className="text-xs font-bold tech-subheading">ØJEBLIKKELIG</span>
                 </div>
               </div>
+            </div>
+            <div className="mt-4 text-center">
+              <p className="text-xs text-gray-600 font-medium">Opdateret: {getCurrentMonthYear()}</p>
             </div>
           </div>
         </div>

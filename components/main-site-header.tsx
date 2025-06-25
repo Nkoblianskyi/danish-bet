@@ -34,7 +34,7 @@ export function MainSiteHeader() {
             <Link href="/" className="flex items-center gap-4 group">
               <div className="relative">
                 <div className="w-12 h-12 bg-tech-gold border-2 border-tech-black flex items-center justify-center tech-scanner">
-                  <Image src="/logo.png" alt="Logo" width={24} height={24} className="w-6 h-6" />
+                  <Image src="/logo.png" alt="Logo" width={24} height={24} className="w-8 h-8" />
                 </div>
                 <div
                   className="absolute -top-1 -right-1 w-3 h-3 border border-tech-black"
@@ -44,14 +44,11 @@ export function MainSiteHeader() {
               </div>
               <div>
                 <h1 className="text-xl lg:text-2xl font-bold tech-heading">
-                  <span className="text-tech-gold">BETTING</span>
+                  <span className="text-tech-white">BETTING</span>
                   <span className="text-tech-white"> BEDSTE</span>
                   <span style={{ color: "#C8102E" }}> DANSKE</span>
                   <span className="text-tech-white"> SIDER</span>
                 </h1>
-                <p className="text-sm text-tech-gray-300 font-medium tech-subheading">
-                  EKSPERT ANALYSE & ANMELDELSER 2025
-                </p>
               </div>
             </Link>
           </div>
