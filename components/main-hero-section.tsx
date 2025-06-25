@@ -1,6 +1,6 @@
 "use client"
 
-import { Award, TrendingUp, Zap } from "lucide-react"
+import { Award, TrendingUp } from "lucide-react"
 import Image from "next/image"
 
 interface HeroSectionProps {
@@ -47,10 +47,13 @@ export function MainHeroSection({ onAdvertiserModalOpen, onTermsModalOpen }: Her
 
                 <div className="w-20 h-0.5 bg-green-600 mx-auto mb-4"></div>
 
-                <p className="text-base text-black max-w-2xl mx-auto leading-relaxed">
-                  At finde pålidelige bookmakere kræver ekspertviden og grundig research. Heldigvis eliminerer vores omfattende analyse gætteri ved at give detaljeret indsigt i Danmarks førende bettingplatforme.
-
-                  Vi starter med exceptionelle velkomstbonusser, der er omhyggeligt evalueret af vores professionelle review-team.
+                <p className="text-base text-black max-w-3xl mx-auto leading-relaxed mb-4">
+                  At finde pålidelige bookmakere kræver ekspertviden og grundig research. Heldigvis eliminerer vores
+                  omfattende analyse gætteri ved at give detaljeret indsigt i Danmarks førende bettingplatforme.
+                </p>
+                <p className="text-base text-black max-w-3xl mx-auto leading-relaxed">
+                  Vi starter med exceptionelle velkomstbonusser, der er omhyggeligt evalueret af vores professionelle
+                  review-team.
                 </p>
 
                 {/* Trust Indicators */}
@@ -89,12 +92,14 @@ export function MainHeroSection({ onAdvertiserModalOpen, onTermsModalOpen }: Her
 
             <div className="w-16 h-0.5 bg-green-600 mx-auto mb-4"></div>
 
-            <p className="text-xs text-black mb-2 leading-relaxed">
-              UAt finde pålidelige bookmakere kræver ekspertviden og grundig research. Heldigvis eliminerer vores omfattende analyse gætteri ved at give detaljeret indsigt i Danmarks førende bettingplatforme.
-
-              Vi starter med exceptionelle velkomstbonusser, der er omhyggeligt evalueret af vores professionelle review-team.
+            <p className="text-sm md:text-base text-black mb-4 leading-relaxed max-w-2xl mx-auto">
+              At finde pålidelige bookmakere kræver ekspertviden og grundig research. Heldigvis eliminerer vores
+              omfattende analyse gætteri ved at give detaljeret indsigt i Danmarks førende bettingplatforme.
             </p>
-
+            <p className="text-sm md:text-base text-black leading-relaxed max-w-2xl mx-auto">
+              Vi starter med exceptionelle velkomstbonusser, der er omhyggeligt evalueret af vores professionelle
+              review-team.
+            </p>
             {/* Trust Indicators */}
             <div className="mt-6">
               <div className="flex justify-center items-center gap-1 sm:gap-3">
