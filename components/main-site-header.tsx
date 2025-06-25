@@ -14,11 +14,11 @@ export function MainSiteHeader() {
               <div className="absolute -top-1 -right-1 w-2 h-2" style={{ backgroundColor: "#C8102E" }}></div>
             </div>
             <div className="text-center">
-              <h1 className="text-sm font-bold leading-tight tech-heading">
+              <h1 className="text-sm font-bold leading-tight">
                 <span className="text-tech-white">Betting</span>
                 <span className="text-tech-white"> Bedste</span>
                 <span style={{ color: "#C8102E" }}> Danske</span>
-                <span className="text-tech-white"> SIDER</span>
+                <span className="text-tech-white"> Sider</span>
               </h1>
             </div>
           </Link>
@@ -43,11 +43,11 @@ export function MainSiteHeader() {
                 <div className="absolute -bottom-1 -left-1 w-3 h-3 bg-tech-white border border-tech-black"></div>
               </div>
               <div>
-                <h1 className="text-xl lg:text-2xl font-bold tech-heading">
+                <h1 className="text-xl lg:text-2xl font-bold">
                   <span className="text-tech-white">Betting</span>
                   <span className="text-tech-white"> Bedste</span>
                   <span style={{ color: "#C8102E" }}> Danske</span>
-                  <span className="text-tech-white"> SIDER</span>
+                  <span className="text-tech-white"> Sider</span>
                 </h1>
               </div>
             </Link>
