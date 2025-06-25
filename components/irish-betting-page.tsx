@@ -10,6 +10,7 @@ import { bettingSites } from "../data/mock-data"
 import { MainHeroSection } from "./main-hero-section"
 import { PageLayoutWrapper } from "./page-layout-wrapper"
 import { BettingSitesList } from "./betting-sites-list"
+import { OurFavoriteSection } from "./our-favorite-section"
 
 export default function IrishBettingPage() {
   const [isAdvertiserModalOpen, setIsAdvertiserModalOpen] = useState(false)
@@ -27,6 +28,9 @@ export default function IrishBettingPage() {
         <BettingSitesList />
 
         <InformationalContent />
+
+        {/* Our Favorite Section */}
+        <OurFavoriteSection />
       </PageLayoutWrapper>
 
       {/* Тільки одна модалка - Editor's Choice */}
