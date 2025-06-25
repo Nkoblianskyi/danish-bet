@@ -3,7 +3,7 @@ import Image from "next/image"
 
 export function MainSiteHeader() {
   return (
-    <header className="tech-header sticky top-0 z-40">
+    <header className="tech-header  sticky top-0 z-40">
       {/* Mobile Header */}
       <div className="md:hidden">
         <div className="h-12 flex items-center justify-center px-4 relative">

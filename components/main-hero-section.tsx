@@ -74,7 +74,7 @@ export function MainHeroSection({ onAdvertiserModalOpen, onTermsModalOpen }: Her
                   </div>
                 </div>
                 <div className="mt-6 text-center">
-                  <p className="text-sm text-gray-600 font-medium">Opdateret: {getCurrentMonthYear()}</p>
+                  <p className="text-sm text-tech-black  font-medium">Opdateret: {getCurrentMonthYear()}</p>
                 </div>
               </div>
             </div>
@@ -114,7 +114,7 @@ export function MainHeroSection({ onAdvertiserModalOpen, onTermsModalOpen }: Her
               </div>
             </div>
             <div className="mt-4 text-center">
-              <p className="text-xs text-gray-600 font-medium">Opdateret: {getCurrentMonthYear()}</p>
+              <p className="text-xs text-tech-black  font-medium">Opdateret: {getCurrentMonthYear()}</p>
             </div>
           </div>
         </div>
