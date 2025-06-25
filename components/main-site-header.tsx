@@ -15,9 +15,9 @@ export function MainSiteHeader() {
             </div>
             <div className="text-center">
               <h1 className="text-sm font-bold leading-tight tech-heading">
-                <span className="text-tech-white">BETTING</span>
-                <span className="text-tech-white"> BEDSTE</span>
-                <span style={{ color: "#C8102E" }}> DANSKE</span>
+                <span className="text-tech-white">Betting</span>
+                <span className="text-tech-white"> Bedste</span>
+                <span style={{ color: "#C8102E" }}> Danske</span>
               </h1>
             </div>
           </Link>
