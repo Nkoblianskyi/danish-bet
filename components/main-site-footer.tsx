@@ -138,12 +138,12 @@ export function MainSiteFooter() {
         </div>
 
         {/* Responsible Gambling Partners */}
-        <div className="border-t-2 border-tech-gold/30 pt-12 mb-12">
+        <div className="border-t-2 border-tech-gold/30 pt-8 mb-8">
           <h4 className="text-xl font-bold mb-8 text-center text-tech-gold tech-heading">ANSVARLIGT SPIL PARTNERE</h4>
           <div className="flex flex-wrap justify-center items-center gap-4 md:gap-8">
             <Link href="https://spillemyndigheden.dk/" className="group">
               <div className="bg-tech-white border-2 border-tech-black p-4 shadow-tech-medium group-hover:shadow-tech-glow transition-all duration-300 transform group-hover:scale-105 relative">
-                <img src="/spillemyn.svg" alt="Spillemyndigheden" className="h-8 md:h-10 object-contain" />
+                <img src="/spillemyn.svg" alt="Spillemyndigheden" className="h-6 md:h-8 object-contain" />
                 <div className="absolute -top-1 -left-1 w-2 h-2 bg-tech-gold"></div>
                 <div className="absolute -bottom-1 -right-1 w-2 h-2" style={{ backgroundColor: "#C8102E" }}></div>
               </div>
@@ -164,14 +164,14 @@ export function MainSiteFooter() {
             </Link>
             <Link href="https://www.begambleaware.org/" className="group">
               <div className="bg-tech-white border-2 border-tech-black p-4 shadow-tech-medium group-hover:shadow-tech-glow transition-all duration-300 transform group-hover:scale-105 relative">
-                <img src="/gamble.webp" alt="GambleAware" className="h-8 md:h-10 object-contain" />
+                <img src="/gamble.webp" alt="GambleAware" className="h-4 md:h-6 object-contain" />
                 <div className="absolute -top-1 -right-1 w-2 h-2 bg-tech-gold"></div>
                 <div className="absolute -bottom-1 -left-1 w-2 h-2" style={{ backgroundColor: "#C8102E" }}></div>
               </div>
             </Link>
             <Link href="https://www.gamcare.org.uk/" className="group">
               <div className="bg-tech-white border-2 border-tech-black p-4 shadow-tech-medium group-hover:shadow-tech-glow transition-all duration-300 transform group-hover:scale-105 relative">
-                <img src="/gamecare.svg" alt="GamCare" className="h-8 md:h-10 object-contain" />
+                <img src="/gamecare.svg" alt="GamCare" className="h-6 md:h-8 object-contain" />
                 <div className="absolute -top-1 -left-1 w-2 h-2 bg-tech-gold"></div>
                 <div className="absolute -bottom-1 -right-1 w-2 h-2" style={{ backgroundColor: "#C8102E" }}></div>
               </div>
@@ -192,18 +192,7 @@ export function MainSiteFooter() {
                 <div className="w-4 h-3 bg-tech-white border border-tech-black"></div>
               </div>
             </div>
-          </div>
-          <div className="border-2 p-6 relative" style={{ backgroundColor: "#C8102E33", borderColor: "#C8102E" }}>
-            {/* Corner accents */}
-            <div className="absolute top-0 left-0 w-3 h-3" style={{ backgroundColor: "#C8102E" }}></div>
-            <div className="absolute top-0 right-0 w-3 h-3 bg-tech-gold"></div>
-            <div className="absolute bottom-0 left-0 w-3 h-3 bg-tech-gold"></div>
-            <div className="absolute bottom-0 right-0 w-3 h-3" style={{ backgroundColor: "#C8102E" }}></div>
-
-            <p className="font-bold text-sm mb-2 tech-heading" style={{ color: "#C8102E" }}>
-              🔞 18+ | KUN DANSKE SPILLERE | SPIL KAN VÆRE VANEDANNENDE — SPIL SIKKERT
-            </p>
-          </div>
+          </div>  
         </div>
       </div>
     </footer>
