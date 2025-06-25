@@ -27,7 +27,7 @@ export function MainSiteHeader() {
 
       {/* Desktop/Tablet Header */}
       <div className="hidden md:block">
-        <div className="container mx-auto px-4 py-3 max-w-[1150px] bg-black/50 backdrop-blur-sm">
+        <div className="container mx-auto px-4 py-3 max-w-[1150px]">
           <div className="flex items-center justify-center">
             {/* Logo and Brand - Centered */}
             <Link href="/" className="flex items-center gap-4 group">

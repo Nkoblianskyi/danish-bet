@@ -86,8 +86,8 @@ export function MainHeroSection({ onAdvertiserModalOpen, onTermsModalOpen }: Her
       <div className="lg:hidden mb-2">
         <div className="bg-white/70 shadow-lg max-w-[1150px] mx-auto rounded-lg">
           <div className="px-4 py-4 text-center">
-            <h1 className="text-2x md:text-3xl font-bold mb-3 text-black">
-              Bedste <span style={{ color: "#C8102E" }}>Danske</span> Betting Sider
+            <h1 className="text-2x md:text-3xl font-bold mb-3 text-black uppercase">
+              Bedste <span style={{ color: "#C8102E" }}>Danske</span> Betting Sider 2025
             </h1>
 
             <div className="w-16 h-0.5 bg-green-600 mx-auto mb-4"></div>
