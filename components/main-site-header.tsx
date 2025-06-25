@@ -18,6 +18,7 @@ export function MainSiteHeader() {
                 <span className="text-tech-white">Betting</span>
                 <span className="text-tech-white"> Bedste</span>
                 <span style={{ color: "#C8102E" }}> Danske</span>
+                <span className="text-tech-white"> SIDER</span>
               </h1>
             </div>
           </Link>
@@ -46,6 +47,7 @@ export function MainSiteHeader() {
                   <span className="text-tech-white">Betting</span>
                   <span className="text-tech-white"> Bedste</span>
                   <span style={{ color: "#C8102E" }}> Danske</span>
+                  <span className="text-tech-white"> SIDER</span>
                 </h1>
               </div>
             </Link>
