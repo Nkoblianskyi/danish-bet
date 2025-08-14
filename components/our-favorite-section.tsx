@@ -43,7 +43,7 @@ export function OurFavoriteSection() {
           <div className="h-40 flex items-center py-6 px-6 bg-tech-white relative">
             {/* PLATFORM - 30% */}
             <div className="flex-[0_0_30%] pr-2 flex justify-center items-center h-full relative z-10">
-              <div className="bg-tech-white border-2 border-tech-black p-4 shadow-tech-medium relative mt-4">
+              <div className="bg-black border-2 border-tech-black p-4 shadow-tech-medium relative mt-4">
                 <img
                   src={favoriteSite.logo || "/placeholder.svg"}
                   alt={favoriteSite.name}
@@ -138,7 +138,7 @@ export function OurFavoriteSection() {
             <div className="grid grid-cols-12 gap-2 items-center relative z-10">
               {/* Logo - 3 колонки */}
               <div className="col-span-3 flex justify-center">
-                <div className="bg-tech-white border-2 border-tech-black p-2 shadow-tech-soft w-full mt-4 relative">
+                <div className="bg-black border-2 border-tech-black p-2 shadow-tech-soft w-full mt-4 relative">
                   <img
                     src={favoriteSite.logo || "/placeholder.svg"}
                     alt={favoriteSite.name}
@@ -243,7 +243,7 @@ export function OurFavoriteSection() {
             <div className="grid grid-cols-3 gap-2 items-center mt-8 relative z-10">
               {/* Logo Column */}
               <div className="flex justify-center">
-                <div className="bg-tech-white border-2 border-tech-black p-2 shadow-tech-soft relative">
+                <div className="bg-black border-2 border-tech-black p-2 shadow-tech-soft relative">
                   <img
                     src={favoriteSite.logo || "/placeholder.svg"}
                     alt={favoriteSite.name}
