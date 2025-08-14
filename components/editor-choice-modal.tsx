@@ -52,12 +52,12 @@ export function EditorChoiceModal({ bettingSites }: EditorChoiceModalProps) {
         variant="ghost"
         size="sm"
         onClick={() => setIsOpen(false)}
-        className="absolute top-2 right-2 sm:top-4 sm:right-4 text-tech-white hover:bg-tech-white/20 z-10 w-8 h-8 sm:w-10 sm:h-10 p-0 bg-tech-black/70 border-2 border-tech-gold rounded-full shadow-tech-glow"
+        className="absolute top-44 right-2 sm:top-36 sm:right-28 text-tech-white hover:bg-tech-white/20 z-10 w-8 h-8 sm:w-10 sm:h-10 p-0 bg-tech-black/70 border-2 border-tech-gold rounded-full shadow-tech-glow"
       >
         <X className="w-4 h-4 sm:w-5 sm:h-5" />
       </Button>
 
-      <div className="w-full h-full flex flex-col justify-center items-center max-w-sm sm:max-w-2xl md:max-w-4xl lg:max-w-5xl">
+      <div className="w-full  flex flex-col justify-center items-center max-w-sm sm:max-w-2xl md:max-w-4xl lg:max-w-5xl">
         {/* Header Banner */}
         <div className="text-center mb-2 sm:mb-4 px-2 flex-shrink-0">
           <div className="relative inline-block">
@@ -102,11 +102,11 @@ export function EditorChoiceModal({ bettingSites }: EditorChoiceModalProps) {
                 </div>
 
                 {/* Logo section */}
-                <div className="bg-black h-28 sm:h-28 md:h-28 flex items-center justify-center p-2 sm:p-3 border-b-2 border-tech-black flex-shrink-0 relative">
+                <div className="bg-black h-36 sm:h-36 md:h-36 flex items-center justify-center p-2 sm:p-3 border-b-2 border-tech-black flex-shrink-0 relative">
                   <img
                     src={site?.logo || "/placeholder.svg"}
                     alt={site?.name || "Site"}
-                    className="h-28 sm:h-28 md:h-28 w-auto object-contain"
+                    className="h-32 sm:h-32 md:h-32 w-auto object-contain p-2"
                   />
                   {/* Corner flags */}
                   <div className="absolute -top-1 -left-1 w-2 h-2" style={{ backgroundColor: "#C8102E" }}></div>
@@ -122,16 +122,16 @@ export function EditorChoiceModal({ bettingSites }: EditorChoiceModalProps) {
                   <div className="flex flex-col items-center justify-center h-full gap-3">
                     {/* Bonus Amount */}
                     <div className="text-center">
-                      <div className="text-xs sm:text-sm text-tech-gray-600 font-medium mb-1 tech-subheading">
+                      <div className="text-sm sm:text-sm text-tech-gray-600 font-medium mb-1 tech-subheading">
                         VELKOMSTBONUS
                       </div>
                       <div
-                        className={`${isMobile || isCenter ? "text-lg sm:text-xl md:text-2xl" : "text-sm sm:text-lg md:text-xl"} font-black text-tech-black tracking-wider leading-tight tech-heading`}
+                        className={`${isMobile || isCenter ? "text-xl sm:text-xl md:text-2xl" : "text-sm sm:text-lg md:text-xl"} font-black text-tech-black tracking-wider leading-tight tech-heading`}
                       >
                         {site?.bonus}
                       </div>
                       <div
-                        className={`${isMobile || isCenter ? "text-base sm:text-base md:text-lg" : "text-xs sm:text-sm md:text-base"} font-bold leading-tight tech-heading`}
+                        className={`${isMobile || isCenter ? "text-xl sm:text-xl md:text-xl" : "text-xs sm:text-sm md:text-base"} font-bold leading-tight tech-heading`}
                         style={{ color: "#C8102E" }}
                       >
                         {site?.welcomeOffer}
