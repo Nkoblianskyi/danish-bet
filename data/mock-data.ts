@@ -10,7 +10,7 @@ export const bettingSites: BettingSite[] = [
     description: "Danmarks førende betting platform",
     features: ["Live Streaming", "Statistikker", "Cash Out"],
     welcomeOffer: "",
-    votes: 31245,
+    votes: 6124,
     link: "https://qualityboost.top/fVFy5hsx",
   },
   {
@@ -22,7 +22,7 @@ export const bettingSites: BettingSite[] = [
     description: "Danmarks favorit betting side",
     features: ["Konkurrencedygtige odds", "Cash Out", "Bet Builder"],
     welcomeOffer: "",
-    votes: 28934,
+    votes: 3893,
     link: "https://qualityboost.top/DMR8211N",
   },
   {
@@ -34,7 +34,7 @@ export const bettingSites: BettingSite[] = [
     description: "Officiel dansk operatør",
     features: ["Dansk fokus", "Moderne interface", "Hurtige udbetalinger"],
     welcomeOffer: "",
-    votes: 27156,
+    votes: 5715,
     link: "https://qualityboost.top/sVgN522T",
   },
   {
@@ -46,7 +46,7 @@ export const bettingSites: BettingSite[] = [
     description: "Bedste betting exchange",
     features: ["Betting Exchange", "Danske markeder", "Lokal support"],
     welcomeOffer: "",
-    votes: 25789,
+    votes: 3579,
     link: "https://qualityboost.top/fVFy5hsx",
   },
   {
@@ -58,7 +58,7 @@ export const bettingSites: BettingSite[] = [
     description: "Etableret betting leder",
     features: ["Hurtige udbetalinger", "Bedste odds", "Live Streaming"],
     welcomeOffer: "",
-    votes: 24567,
+    votes: 2457,
     link: "https://qualityboost.top/fVFy5hsx",
   },
 ]

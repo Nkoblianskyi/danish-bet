@@ -278,7 +278,7 @@ export function BettingSiteCard({ site, rank }: SiteCardProps) {
         </Link>
 
         {/* Footer Disclaimer */}
-        <div className="px-4 pb-2 border-t border-neutral-200 bg-neutral-50">
+        {/* <div className="px-4 pb-2 border-t border-neutral-200 bg-neutral-50">
           <p className="text-xs text-neutral-500 text-center py-2">
             18+ | Sikker spil |{" "}
             <a
@@ -290,7 +290,7 @@ export function BettingSiteCard({ site, rank }: SiteCardProps) {
               spillemyndigheden.dk
             </a>
           </p>
-        </div>
+        </div> */}
       </div>
     </div>
   )
