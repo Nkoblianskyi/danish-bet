@@ -52,7 +52,7 @@ export function BettingSiteCard({ site, rank }: SiteCardProps) {
           <div className="h-40 flex items-center py-6 px-6 bg-tech-white relative">
             {/* PLATFORM - 30% */}
             <div className="flex-[0_0_30%] pr-2 flex justify-center items-center h-full relative z-10">
-              <div className="bg-tech-white border-2 border-tech-black p-4 shadow-tech-medium relative mt-4">
+              <div className="bg-black border-2 border-tech-black p-4 shadow-tech-medium relative mt-4">
                 <img
                   src={site.logo || "/placeholder.svg"}
                   alt={site.name}
@@ -141,40 +141,38 @@ export function BettingSiteCard({ site, rank }: SiteCardProps) {
       </div>
 
       {/* Tablet Layout */}
-      <div className="hidden md:block lg:hidden tech-card border border-tech-gray-300 relative overflow-hidden cursor-pointer mb-2 mx-4">
+      <div className="pr-2 hidden md:block lg:hidden tech-card border border-tech-gray-300 relative overflow-hidden cursor-pointer mb-2 mx-4">
         <Link href={site.link} target="_blank" rel="noopener noreferrer" className="block">
-          <div className={`pt-6 pb-4 ${rank <= 4 ? "pl-8 pr-4" : "px-4"} bg-tech-white relative`}>
+          <div className="pt-6 pb-4 bg-tech-white relative">
+            <div className="absolute top-0 left-0 flex z-30" style={{ margin: 0, padding: 0 }}>
+              <div
+                className="tech-rank px-2 py-0.5 text-sm font-bold !text-white"
+                style={{ backgroundColor: "#C8102E", margin: 0 }}
+              >
+                #{rank}
+              </div>
+              {rank <= 4 && (
+                <div
+                  className="tech-badge px-2 py-0.5 text-xs font-bold !text-white whitespace-nowrap"
+                  style={{ backgroundColor: "#C8102E", margin: 0 }}
+                >
+                  {getRankLabel(rank)}
+                </div>
+              )}
+            </div>
+
             <div className="grid grid-cols-12 gap-2 items-center relative z-10">
-              {/* Logo - 3 колонки */}
-              <div className="col-span-3 flex justify-center">
-                <div className="bg-tech-white border-2 border-tech-black p-2 shadow-tech-soft w-full mt-4 relative">
+              <div className="col-span-3 flex justify-center p-2">
+                <div className="bg-black border-2 border-tech-black p-2 shadow-tech-soft w-full max-w-[120px] relative">
                   <img src={site.logo || "/placeholder.svg"} alt={site.name} className="w-full h-12 object-contain" />
                   <div className="absolute -top-1 -left-1 w-1 h-1" style={{ backgroundColor: "#C8102E" }}></div>
                   <div className="absolute -top-1 -right-1 w-1 h-1" style={{ backgroundColor: "#C8102E" }}></div>
                 </div>
               </div>
 
-              {/* Badges */}
-              <div className="absolute top-0 left-0 flex gap-0 z-30">
-                <div
-                  className="tech-rank px-2 py-0.5 text-sm font-bold !text-white"
-                  style={{ backgroundColor: "#C8102E" }}
-                >
-                  #{rank}
-                </div>
-                {rank <= 4 && (
-                  <div
-                    className="tech-badge px-2 py-0.5 text-xs font-bold !text-white whitespace-nowrap"
-                    style={{ backgroundColor: "#C8102E" }}
-                  >
-                    {getRankLabel(rank)}
-                  </div>
-                )}
-              </div>
-
               {/* Bonus - 3 колонки */}
               <div className="col-span-3 text-center">
-                <div className="text-xs text-tech-gray-600 uppercase font-bold mb-1 tech-subheading">BONUS</div>
+                <div className="text-xs text-tech-gray-600 uppercase font-bold mb-1 tech-subheading">VELKOMSTBONUS</div>
                 <div className="text-sm font-bold text-tech-black mb-1 tech-heading">{site.bonus}</div>
                 <div className="text-sm font-bold text-tech-black tech-heading">{site.welcomeOffer}</div>
               </div>
@@ -209,7 +207,7 @@ export function BettingSiteCard({ site, rank }: SiteCardProps) {
       </div>
 
       {/* Mobile Layout */}
-      <div className="md:hidden tech-card  relative overflow-hidden cursor-pointer mb-1 mx-2">
+      <div className="md:hidden tech-card relative overflow-hidden cursor-pointer mb-1 mx-2">
         <Link href={site.link} target="_blank" rel="noopener noreferrer" className="block">
           {/* Main Content */}
           <div className="p-2 relative bg-tech-white">
@@ -235,7 +233,7 @@ export function BettingSiteCard({ site, rank }: SiteCardProps) {
             <div className="grid grid-cols-2 gap-2 items-center mt-5 relative z-10">
               {/* Logo Column */}
               <div className="flex justify-center">
-                <div className="bg-tech-white border-2 border-tech-black p-2 shadow-tech-soft relative">
+                <div className="bg-black border-2 border-tech-black p-2 shadow-tech-soft relative">
                   <img src={site.logo || "/placeholder.svg"} alt={site.name} className="h-16 w-auto object-contain" />
                   <div className="absolute -top-1 -left-1 w-1 h-1" style={{ backgroundColor: "#C8102E" }}></div>
                   <div className="absolute -bottom-1 -right-1 w-1 h-1" style={{ backgroundColor: "#C8102E" }}></div>
@@ -244,11 +242,10 @@ export function BettingSiteCard({ site, rank }: SiteCardProps) {
 
               {/* Bonus Column */}
               <div className="text-center">
-                <div className="text-xs text-tech-gray-600 uppercase font-bold mb-1 tech-subheading">BONUS</div>
+                <div className="text-xs text-tech-gray-600 uppercase font-bold mb-1 tech-subheading">VELKOMSTBONUS</div>
                 <div className="text-lg font-bold text-tech-black leading-tight mb-1 tech-heading">{site.bonus}</div>
                 <div className="text-lg font-bold text-tech-black leading-tight tech-heading">{site.welcomeOffer}</div>
               </div>
-
             </div>
 
             {/* Rating Row */}
@@ -265,7 +262,9 @@ export function BettingSiteCard({ site, rank }: SiteCardProps) {
                     <Star key={i} className="w-4 h-4 fill-current" style={{ color: "#C8102E" }} />
                   ))}
                 </div>
-                <div className="text-[10px] text-tech-gray-600 font-bold tech-subheading">({formatVotes(site.votes)})</div>
+                <div className="text-[10px] text-tech-gray-600 font-bold tech-subheading">
+                  ({formatVotes(site.votes)})
+                </div>
               </div>
 
               {/* Button Column */}
@@ -279,6 +278,19 @@ export function BettingSiteCard({ site, rank }: SiteCardProps) {
         </Link>
 
         {/* Footer Disclaimer */}
+        <div className="px-4 pb-2 border-t border-neutral-200 bg-neutral-50">
+          <p className="text-xs text-neutral-500 text-center py-2">
+            18+ | Sikker spil |{" "}
+            <a
+              href="https://spillemyndigheden.dk/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-brand-600 hover:text-brand-700 underline"
+            >
+              spillemyndigheden.dk
+            </a>
+          </p>
+        </div>
       </div>
     </div>
   )

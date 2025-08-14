@@ -12,6 +12,16 @@ interface EditorChoiceModalProps {
 
 export function EditorChoiceModal({ bettingSites }: EditorChoiceModalProps) {
   const [isOpen, setIsOpen] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768)
+    }
+    checkMobile()
+    window.addEventListener("resize", checkMobile)
+    return () => window.removeEventListener("resize", checkMobile)
+  }, [])
 
   useEffect(() => {
     // Показувати модалку через 8 секунд після завантаження
@@ -32,6 +42,8 @@ export function EditorChoiceModal({ bettingSites }: EditorChoiceModalProps) {
     top3Sites[0], // 1-й сайт (Bet365) - центральна позиція
     top3Sites[2], // 3-й сайт (Danske Spil) - права позиція
   ]
+
+  const sitesToShow = isMobile ? [top3Sites[0]] : reorderedSites
 
   return (
     <div className="fixed inset-0 bg-black/90 backdrop-blur-md z-50 flex items-center justify-center p-2 sm:p-4">
@@ -66,17 +78,18 @@ export function EditorChoiceModal({ bettingSites }: EditorChoiceModalProps) {
 
         {/* Cards Layout */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 w-full px-2 flex-1 min-h-0">
-          {reorderedSites.map((site: BettingSite, index: number) => {
-            const isCenter = index === 1
-            const rank = isCenter ? 1 : index === 0 ? 2 : 3
+          {sitesToShow.map((site: BettingSite, index: number) => {
+            const isCenter = isMobile ? true : index === 1
+            const rank = isMobile ? 1 : isCenter ? 1 : index === 0 ? 2 : 3
 
             return (
               <div
                 key={site?.id || index}
-                className={`tech-card overflow-hidden transition-all duration-300 hover:scale-105 flex flex-col ${isCenter
-                    ? "w-full sm:w-[200px] md:w-[240px] lg:w-[280px] h-[160px] sm:h-[320px] md:h-[380px] border-4 border-tech-gold shadow-tech-glow"
+                className={`tech-card overflow-hidden transition-all duration-300 hover:scale-105 flex flex-col ${
+                  isMobile || isCenter
+                    ? "w-full sm:w-[200px] md:w-[240px] lg:w-[280px] h-[320px] sm:h-[320px] md:h-[380px] border-4 border-tech-gold shadow-tech-glow"
                     : "w-full sm:w-[180px] md:w-[220px] lg:w-[260px] h-[140px] sm:h-[300px] md:h-[360px] border-2 border-tech-white shadow-tech-strong"
-                  } bg-tech-white relative`}
+                } bg-tech-white relative`}
               >
                 {/* Rank Badge */}
                 <div className="absolute top-0 left-0 z-20">
@@ -89,11 +102,11 @@ export function EditorChoiceModal({ bettingSites }: EditorChoiceModalProps) {
                 </div>
 
                 {/* Logo section */}
-                <div className="bg-tech-gray-100 h-16 sm:h-20 md:h-24 flex items-center justify-center p-2 sm:p-3 border-b-2 border-tech-black flex-shrink-0 relative">
+                <div className="bg-black h-28 sm:h-28 md:h-28 flex items-center justify-center p-2 sm:p-3 border-b-2 border-tech-black flex-shrink-0 relative">
                   <img
                     src={site?.logo || "/placeholder.svg"}
                     alt={site?.name || "Site"}
-                    className="h-16 sm:h-20 md:h-20 w-auto object-contain"
+                    className="h-28 sm:h-28 md:h-28 w-auto object-contain"
                   />
                   {/* Corner flags */}
                   <div className="absolute -top-1 -left-1 w-2 h-2" style={{ backgroundColor: "#C8102E" }}></div>
@@ -106,19 +119,19 @@ export function EditorChoiceModal({ bettingSites }: EditorChoiceModalProps) {
                   <div className="absolute top-0 right-0 w-2 h-2 bg-tech-gold"></div>
                   <div className="absolute bottom-0 left-0 w-2 h-2 bg-tech-gold"></div>
 
-                  <div className="flex sm:flex-col items-center sm:items-center justify-center sm:justify-center h-full">
+                  <div className="flex flex-col items-center justify-center h-full gap-3">
                     {/* Bonus Amount */}
-                    <div className="flex-1 sm:flex-none text-center">
-                      <div className="text-xs sm:text-sm text-tech-gray-600 font-medium mb-0 sm:mb-1 tech-subheading">
+                    <div className="text-center">
+                      <div className="text-xs sm:text-sm text-tech-gray-600 font-medium mb-1 tech-subheading">
                         VELKOMSTBONUS
                       </div>
                       <div
-                        className={`${isCenter ? "text-base sm:text-xl md:text-2xl" : "text-sm sm:text-lg md:text-xl"} font-black text-tech-black tracking-wider leading-tight tech-heading`}
+                        className={`${isMobile || isCenter ? "text-lg sm:text-xl md:text-2xl" : "text-sm sm:text-lg md:text-xl"} font-black text-tech-black tracking-wider leading-tight tech-heading`}
                       >
                         {site?.bonus}
                       </div>
                       <div
-                        className={`${isCenter ? "text-sm sm:text-base md:text-lg" : "text-xs sm:text-sm md:text-base"} font-bold leading-tight tech-heading`}
+                        className={`${isMobile || isCenter ? "text-base sm:text-base md:text-lg" : "text-xs sm:text-sm md:text-base"} font-bold leading-tight tech-heading`}
                         style={{ color: "#C8102E" }}
                       >
                         {site?.welcomeOffer}
@@ -126,18 +139,18 @@ export function EditorChoiceModal({ bettingSites }: EditorChoiceModalProps) {
                     </div>
 
                     {/* Rating Stars */}
-                    <div className="flex flex-col items-center sm:my-3 mx-3 sm:mx-0">
+                    <div className="flex flex-col items-center">
                       <div className="flex items-center gap-0.5 mb-1">
                         {[...Array(5)].map((_, i) => (
                           <Star
                             key={i}
-                            className={`${isCenter ? "w-2 sm:w-3 md:w-4 h-2 sm:h-3 md:h-4" : "w-1.5 sm:w-2.5 md:w-3 h-1.5 sm:h-2.5 md:h-3"} fill-current`}
+                            className={`${isMobile || isCenter ? "w-3 sm:w-3 md:w-4 h-3 sm:h-3 md:h-4" : "w-1.5 sm:w-2.5 md:w-3 h-1.5 sm:h-2.5 md:h-3"} fill-current`}
                             style={{ color: "#C8102E" }}
                           />
                         ))}
                       </div>
                       <span
-                        className={`font-bold tech-subheading ${isCenter ? "text-xs sm:text-sm md:text-base" : "text-xs sm:text-sm"}`}
+                        className={`font-bold tech-subheading ${isMobile || isCenter ? "text-sm sm:text-sm md:text-base" : "text-xs sm:text-sm"}`}
                         style={{ color: "#C8102E" }}
                       >
                         {site?.rating.toFixed(1)}/10
@@ -148,10 +161,11 @@ export function EditorChoiceModal({ bettingSites }: EditorChoiceModalProps) {
                     <div className="flex-shrink-0">
                       <Link href={site?.link || "#"} target="_blank" rel="noopener noreferrer">
                         <Button
-                          className={`bg-green-600 hover:bg-green-700 text-white font-bold border-2 border-green-800 ${isCenter
-                              ? "py-1 sm:py-2 px-2 sm:px-4 text-xs sm:text-sm md:text-base"
+                          className={`bg-green-600 hover:bg-green-700 text-white font-bold border-2 border-green-800 ${
+                            isMobile || isCenter
+                              ? "py-2 sm:py-2 px-4 sm:px-4 text-sm sm:text-sm md:text-base"
                               : "py-0.5 sm:py-1.5 px-1.5 sm:px-3 text-xs sm:text-sm"
-                            } shadow-tech-medium transition-all duration-300 hover:scale-105 whitespace-nowrap tech-subheading`}
+                          } shadow-tech-medium transition-all duration-300 hover:scale-105 whitespace-nowrap tech-subheading`}
                           onClick={() => setIsOpen(false)}
                         >
                           FÅ BONUS
