@@ -4,7 +4,8 @@ import { useState, useEffect } from "react"
 import { X, Star, Award } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import { BettingSite } from "@/data/mock-data"
+import { BettingSite } from "@/types"
+
 
 
 interface EditorChoiceModalProps {
