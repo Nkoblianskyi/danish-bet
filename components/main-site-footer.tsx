@@ -20,8 +20,6 @@ export function MainSiteFooter() {
                 <div className="w-16 h-16 bg-tech-gold border-2 border-tech-black flex items-center justify-center shadow-tech-glow group-hover:shadow-tech-red-glow transition-all duration-300">
                   <Image src="/logo.png" alt="Dansk Flag" width={40} height={40} />
                 </div>
-                <div className="absolute -top-1 -right-1 w-3 h-3" style={{ backgroundColor: "#C8102E" }}></div>
-                <div className="absolute -bottom-1 -left-1 w-3 h-3 bg-tech-white"></div>
               </div>
               <div>
                 <h3 className="text-2xl font-bold tech-heading">
@@ -144,36 +142,31 @@ export function MainSiteFooter() {
             <Link href="https://spillemyndigheden.dk/" className="group">
               <div className="bg-tech-white border-2 border-tech-black p-4 shadow-tech-medium group-hover:shadow-tech-glow transition-all duration-300 transform group-hover:scale-105 relative">
                 <img src="/spillemyn.svg" alt="Spillemyndigheden" className="h-6 md:h-8 object-contain" />
-                <div className="absolute -top-1 -left-1 w-2 h-2 bg-tech-gold"></div>
-                <div className="absolute -bottom-1 -right-1 w-2 h-2" style={{ backgroundColor: "#C8102E" }}></div>
+
               </div>
             </Link>
             <Link href="https://stopspillet.dk/" className="group">
               <div className=" border-2 border-tech-black p-4 shadow-tech-medium group-hover:shadow-tech-glow transition-all duration-300 transform group-hover:scale-105 relative">
                 <img src="/stopsillet.svg" alt="StopSpillet" className="h-8 md:h-10 object-contain" />
-                <div className="absolute -top-1 -right-1 w-2 h-2 bg-tech-gold"></div>
-                <div className="absolute -bottom-1 -left-1 w-2 h-2" style={{ backgroundColor: "#C8102E" }}></div>
+
               </div>
             </Link>
             <Link href="https://www.rofus.nu/" className="group">
               <div className=" border-2 border-tech-black p-4 shadow-tech-medium group-hover:shadow-tech-glow transition-all duration-300 transform group-hover:scale-105 relative">
                 <img src="/rofus.png" alt="ROFUS" className="h-6 md:h-8 object-contain" />
-                <div className="absolute -top-1 -left-1 w-2 h-2" style={{ backgroundColor: "#C8102E" }}></div>
-                <div className="absolute -bottom-1 -right-1 w-2 h-2 bg-tech-gold"></div>
+
               </div>
             </Link>
             <Link href="https://www.begambleaware.org/" className="group">
               <div className="bg-tech-white border-2 border-tech-black p-4 shadow-tech-medium group-hover:shadow-tech-glow transition-all duration-300 transform group-hover:scale-105 relative">
                 <img src="/gamble.webp" alt="GambleAware" className="h-4 md:h-6 object-contain" />
-                <div className="absolute -top-1 -right-1 w-2 h-2 bg-tech-gold"></div>
-                <div className="absolute -bottom-1 -left-1 w-2 h-2" style={{ backgroundColor: "#C8102E" }}></div>
+
               </div>
             </Link>
             <Link href="https://www.gamcare.org.uk/" className="group">
               <div className="bg-tech-white border-2 border-tech-black p-4 shadow-tech-medium group-hover:shadow-tech-glow transition-all duration-300 transform group-hover:scale-105 relative">
                 <img src="/gamecare.svg" alt="GamCare" className="h-6 md:h-8 object-contain" />
-                <div className="absolute -top-1 -left-1 w-2 h-2 bg-tech-gold"></div>
-                <div className="absolute -bottom-1 -right-1 w-2 h-2" style={{ backgroundColor: "#C8102E" }}></div>
+
               </div>
             </Link>
           </div>

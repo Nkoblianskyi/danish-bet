@@ -33,8 +33,8 @@ export function MainHeroSection({ onAdvertiserModalOpen, onTermsModalOpen }: Her
   return (
     <>
       {/* Desktop Hero */}
-      <div className="hidden lg:block relative overflow-hidden mb-6">
-        <div className="bg-white/70 shadow-lg max-w-[1150px] mx-auto rounded-lg">
+      <div className="hidden lg:block relative overflow-hidden mb-6 mt-[70px]">
+        <div className="bg-white/70 shadow-lg max-w-[1115px] mx-auto rounded-lg">
           <div className="relative px-8 py-8">
             <div className="relative z-10 text-center">
               {/* Main Heading */}
@@ -44,6 +44,10 @@ export function MainHeroSection({ onAdvertiserModalOpen, onTermsModalOpen }: Her
                 </h1>
 
                 <h2 className="text-lg xl:text-xl font-medium mb-4 text-black">Ekspert Anmeldelser & Analyse</h2>
+
+                <div className="mb-4 text-center">
+                  <p className="text-sm text-[#C8102E] font-bold">Opdateret: {getCurrentMonthYear()}</p>
+                </div>
 
                 <div className="w-20 h-0.5 bg-green-600 mx-auto mb-4"></div>
 
@@ -69,9 +73,7 @@ export function MainHeroSection({ onAdvertiserModalOpen, onTermsModalOpen }: Her
                     </div>
                   </div>
                 </div>
-                <div className="mt-6 text-center">
-                  <p className="text-sm text-[#C8102E] font-bold">Opdateret: {getCurrentMonthYear()}</p>
-                </div>
+
               </div>
             </div>
           </div>
@@ -79,19 +81,27 @@ export function MainHeroSection({ onAdvertiserModalOpen, onTermsModalOpen }: Her
       </div>
 
       {/* Tablet & Mobile Hero */}
-      <div className="lg:hidden mb-2">
-        <div className="bg-white/70 shadow-lg max-w-[1150px] mx-auto rounded-lg">
+      <div className="lg:hidden mb-2"
+        style={
+          { backgroundImage: 'url("/bg-7.jpg")', backgroundSize: 'cover', backgroundPosition: 'center' }
+        }
+      >
+        <div className="bg-white/60 shadow-lg max-w-[1150px] mx-auto rounded-lg">
           <div className="px-4 py-4 text-center">
-            <h1 className="text-2x md:text-3xl font-bold mb-3 text-black uppercase">
+            <h1 className="text-2x md:text-3xl font-bold mb-3 text-black uppercase mt-[40px]">
               Bedste <span style={{ color: "#C8102E" }}>Danske</span> Betting Sider 2025
             </h1>
 
+            <div className="mb-4 text-center">
+              <p className="text-xs text-[#C8102E]  font-bold">Opdateret: {getCurrentMonthYear()}</p>
+            </div>
+
             <div className="w-16 h-0.5 bg-green-600 mx-auto mb-4"></div>
 
-            <p className="text-sm md:text-xs text-black mb-4 leading-relaxed max-w-2xl mx-auto">
+            {/* <p className="text-sm md:text-xs text-black mb-4 leading-relaxed max-w-2xl mx-auto">
               At finde pålidelige bookmakere kræver ekspertviden og grundig research. Heldigvis eliminerer vores
               omfattende analyse gætteri ved at give detaljeret indsigt i Danmarks førende bettingplatforme.
-            </p>
+            </p> */}
             {/* Trust Indicators */}
             <div className="mt-6">
               <div className="flex justify-center items-center gap-1 sm:gap-3">
@@ -109,9 +119,7 @@ export function MainHeroSection({ onAdvertiserModalOpen, onTermsModalOpen }: Her
                 </div>
               </div>
             </div>
-            <div className="mt-4 text-center">
-              <p className="text-xs text-[#C8102E]  font-bold">Opdateret: {getCurrentMonthYear()}</p>
-            </div>
+
           </div>
         </div>
       </div>
