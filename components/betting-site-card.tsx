@@ -113,7 +113,7 @@ export function BettingSiteCard({ site, rank }: SiteCardProps) {
         {/* Footer Disclaimer */}
         <div className="px-6 pb-4 border-t border-neutral-200 bg-neutral-50">
           <p className="text-xs text-neutral-500 text-center py-2">
-            18+ | Sikker spil |{" "}
+            Kun Dk-bruger 18+ | Sikker spil |{" "}
             <a
               href="https://spillemyndigheden.dk/"
               target="_blank"
@@ -242,7 +242,7 @@ export function BettingSiteCard({ site, rank }: SiteCardProps) {
         {/* Footer Disclaimer */}
         <div className=" border-t border-neutral-200 bg-neutral-50">
           <p className="text-[10px] text-neutral-500 text-center py-2">
-            18+ | Sikker spil |{" "}
+            Kun Dk-bruger 18+ | Sikker spil |{" "}
             <a
               href="https://spillemyndigheden.dk/"
               target="_blank"
