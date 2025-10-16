@@ -29,7 +29,7 @@ export function BettingSiteCard({ site, rank }: SiteCardProps) {
   const getRankLabel = (rank: number) => {
     switch (rank) {
       case 1:
-        return "BEDSTE SPILLESAL"
+        return "BEDSTE BOOKMAKER"
       case 2:
         return "EKSKLUSIVT TILBUD"
       case 3:
@@ -239,6 +239,20 @@ export function BettingSiteCard({ site, rank }: SiteCardProps) {
             </div>
           </div>
         </Link>
+        {/* Footer Disclaimer */}
+        <div className=" border-t border-neutral-200 bg-neutral-50">
+          <p className="text-[10px] text-neutral-500 text-center py-2">
+            18+ | Sikker spil |{" "}
+            <a
+              href="https://spillemyndigheden.dk/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-brand-600 hover:text-brand-700 underline"
+            >
+              spillemyndigheden.dk
+            </a>
+          </p>
+        </div>
       </div>
     </div>
   )
