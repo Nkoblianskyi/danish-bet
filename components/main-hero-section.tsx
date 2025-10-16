@@ -3,6 +3,7 @@
 import { Award, TrendingUp } from "lucide-react"
 import Image from "next/image"
 
+
 interface HeroSectionProps {
   onAdvertiserModalOpen: () => void
   onTermsModalOpen: () => void
@@ -34,7 +35,7 @@ export function MainHeroSection({ onAdvertiserModalOpen, onTermsModalOpen }: Her
     <>
       {/* Desktop Hero */}
       <div className="hidden lg:block relative overflow-hidden mb-2 mt-[70px]">
-        <div className="bg-white/70 shadow-lg max-w-[1115px] mx-auto rounded-lg">
+        <div className="bg-white/70 shadow-lg max-w-[1115px] mx-auto rounded-lg items-center flex justify-center">
           <div className="relative px-4 py-6">
             <div className="relative z-10 text-center">
               {/* Main Heading */}
@@ -72,8 +73,13 @@ export function MainHeroSection({ onAdvertiserModalOpen, onTermsModalOpen }: Her
                       <span className="text-sm font-bold tech-subheading">Hurtige Udbetalinge</span>
                     </div>
                   </div>
-                </div>
 
+                </div>
+                <div className="flex justify-center mt-2">
+                  <a href="https://www.spillemyndigheden.dk/" target="_blank">
+                    <Image src="/spillemyn.svg" alt="Hero Image" width={96} height={96} />
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -103,7 +109,7 @@ export function MainHeroSection({ onAdvertiserModalOpen, onTermsModalOpen }: Her
               omfattende analyse gætteri ved at give detaljeret indsigt i Danmarks førende bettingplatforme.
             </p> */}
             {/* Trust Indicators */}
-            <div className="mt-6">
+            <div className="mt-4">
               <div className="flex justify-center items-center gap-1 sm:gap-3">
                 <div className="flex items-center gap-1 sm:gap-2 text-black px-1 sm:px-2 py-1 flex-shrink-0">
                   <Image src="/denmark-flag-icon.webp" alt="Logo" width={20} height={20} className="w-5 h-5" />
@@ -118,6 +124,12 @@ export function MainHeroSection({ onAdvertiserModalOpen, onTermsModalOpen }: Her
                   <span className="text-[10px] sm:text-xs font-bold tech-subheading">Hurtige Udbetalinger</span>
                 </div>
               </div>
+            </div>
+
+            <div className="flex justify-center mt-2">
+              <a href="https://www.spillemyndigheden.dk/" target="_blank">
+                <Image src="/spillemyn.svg" alt="Hero Image" width={96} height={96} />
+              </a>
             </div>
 
           </div>

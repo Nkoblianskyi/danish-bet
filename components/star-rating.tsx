@@ -9,7 +9,7 @@ interface StarRatingProps {
 export function StarRating({ rating, size = "md", color = "#FBBF24" }: StarRatingProps) {
   const starRating = rating / 2
 
-  const roundedStarRating = Math.round(starRating * 4) / 4
+  const roundedStarRating = Math.round(starRating * 10) / 10
 
   // Size classes
   const sizeClasses = {
@@ -18,21 +18,27 @@ export function StarRating({ rating, size = "md", color = "#FBBF24" }: StarRatin
     lg: "w-5 h-5",
   }
 
+  const pixelSizes = {
+    sm: 12,
+    md: 16,
+    lg: 20,
+  }
+
   const starSize = sizeClasses[size]
+  const pixelSize = pixelSizes[size]
 
   return (
     <div className="flex gap-0.5">
       {[...Array(5)].map((_, index) => {
-        const starValue = index + 1
-        const fillPercentage = Math.min(Math.max((roundedStarRating - index) * 100, 0), 100)
+        const fillPercentage = Math.min(Math.max((roundedStarRating - index) * 80, 0), 100)
 
         return (
           <div
             key={index}
             className="relative"
             style={{
-              width: size === "sm" ? "12px" : size === "md" ? "16px" : "20px",
-              height: size === "sm" ? "12px" : size === "md" ? "16px" : "20px",
+              width: `${pixelSize}px`,
+              height: `${pixelSize}px`,
             }}
           >
             {/* Empty star outline */}
@@ -55,6 +61,8 @@ export function StarRating({ rating, size = "md", color = "#FBBF24" }: StarRatin
                   fill: color,
                   stroke: color,
                   strokeWidth: 2,
+                  width: `${pixelSize}px`,
+                  height: `${pixelSize}px`,
                 }}
               />
             </div>

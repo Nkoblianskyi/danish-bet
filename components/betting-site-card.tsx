@@ -73,13 +73,13 @@ export function BettingSiteCard({ site, rank }: SiteCardProps) {
             {/* WELCOME PACKAGE - 25% */}
             <div className="flex-[0_0_25%] px-2 text-center flex flex-col justify-center h-full relative z-10">
               <div className="text-xs text-tech-gray-600 uppercase font-bold mb-1 tech-subheading">VELKOMSTBONUS</div>
-              <div className="text-lg xl:text-xl font-bold text-tech-black mb-1 tech-heading">{site.bonus}</div>
-              <div className="text-sm xl:text-lg font-bold text-tech-black tech-heading">{site.welcomeOffer}</div>
+              <div className="text-sm xl:text-sm font-bold text-tech-black mb-1 tech-heading">{site.bonus}</div>
+              <div className="text-sm xl:text-sm font-bold text-tech-black tech-heading">{site.welcomeOffer}</div>
             </div>
 
             {/* RATING - 12% */}
             <div className="flex-[0_0_12%] px-2 text-center flex flex-col justify-center h-full relative z-10">
-              <div className="text-4xl xl:text-5xl font-bold leading-none mb-1 tech-heading text-green-700">
+              <div className="text-4xl xl:text-4xl font-bold leading-none mb-1 tech-heading text-green-700">
                 {site.rating.toFixed(1)}
               </div>
               <div className="text-xs font-bold text-tech-gray-600 tech-subheading">SCORE</div>
@@ -208,8 +208,8 @@ export function BettingSiteCard({ site, rank }: SiteCardProps) {
               {/* Bonus Column */}
               <div className="text-center">
                 <div className="text-xs text-tech-gray-600 uppercase font-bold mb-1 tech-subheading">VELKOMSTBONUS</div>
-                <div className="text-lg font-bold text-tech-black leading-tight mb-1 tech-heading">{site.bonus}</div>
-                <div className="text-sm font-bold text-tech-black leading-tight tech-heading">{site.welcomeOffer}</div>
+                <div className="text-sm font-bold text-tech-black leading-tight mb-1 tech-heading">{site.bonus}</div>
+                <div className="text-xs font-bold text-tech-black leading-tight tech-heading">{site.welcomeOffer}</div>
               </div>
             </div>
 
