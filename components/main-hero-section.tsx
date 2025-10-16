@@ -65,7 +65,7 @@ export function MainHeroSection({ onAdvertiserModalOpen, onTermsModalOpen }: Her
                     </div>
                     <div className="flex items-center gap-2 text-black px-3 py-2">
                       <Award className="w-4 h-4 text-black" />
-                      <span className="text-sm font-bold tech-subheading">100% Lovlig</span>
+                      <span className="text-sm font-bold tech-subheading">Høje Bonusser</span>
                     </div>
                     <div className="flex items-center gap-2 text-black px-3 py-2">
                       <TrendingUp className="w-4 h-4 text-black" />
