@@ -59,14 +59,14 @@ export function MainSiteFooter() {
             <ul className="space-y-3">
               <li>
                 <Link
-                  href="/about"
+                  href="/"
                   className="text-tech-gray-300 hover:text-tech-gold transition-colors duration-300 flex items-center gap-3 tech-subheading"
                 >
                   <div className="w-2 h-2 bg-tech-gold"></div>
-                  OM PLATFORMEN
+                  HOVEDSIDEN
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link
                   href="/responsible-gaming"
                   className="text-tech-gray-300 transition-colors duration-300 flex items-center gap-3 tech-subheading"
@@ -98,7 +98,7 @@ export function MainSiteFooter() {
                   <div className="w-2 h-2" style={{ backgroundColor: "#C8102E" }}></div>
                   PRIVATLIVSPOLITIK
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </div>
 

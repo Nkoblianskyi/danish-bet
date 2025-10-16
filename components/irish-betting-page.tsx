@@ -36,7 +36,6 @@ export default function IrishBettingPage() {
       {/* Тільки одна модалка - Editor's Choice */}
       <EditorChoiceModal bettingSites={bettingSites} />
 
-      <CookieConsentBanner />
       <AdvertiserDisclosurePopup isOpen={isAdvertiserModalOpen} onClose={() => setIsAdvertiserModalOpen(false)} />
       <TermsConditionsPopup isOpen={isTermsModalOpen} onClose={() => setIsTermsModalOpen(false)} />
     </>

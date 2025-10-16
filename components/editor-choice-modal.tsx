@@ -59,13 +59,9 @@ export function EditorChoiceModal({ bettingSites }: EditorChoiceModalProps) {
 
         {/* Single Card - Vertical Layout */}
         <div className="tech-card overflow-hidden transition-all duration-300 hover:scale-105 flex flex-col w-full max-w-[320px] h-[420px] border-4 border-tech-gold shadow-tech-glow bg-tech-white relative">
-          {/* Rank Badge */}
-          <div className="absolute top-0 left-0 z-20">
-            <div className="tech-rank px-3 py-1 text-sm font-bold !text-black">#1</div>
-          </div>
 
           {/* Logo section */}
-          <div className="bg-black h-28 flex items-center justify-center p-4 border-b-2 border-tech-black flex-shrink-0 relative">
+          <div className="bg-black h-44 flex items-center justify-center p-4 border-b-2 border-tech-black flex-shrink-0 relative">
             <img
               src={topSite.logo || "/placeholder.svg"}
               alt={topSite.name || "Site"}
@@ -87,7 +83,7 @@ export function EditorChoiceModal({ bettingSites }: EditorChoiceModalProps) {
 
               {/* Rating Score */}
               <div>
-                <span className="font-bold tech-subheading text-lg text-green-700">
+                <span className="font-bold tech-subheading text-xl text-green-700">
                   {topSite.rating.toFixed(1)}/10
                 </span>
               </div>
@@ -96,10 +92,10 @@ export function EditorChoiceModal({ bettingSites }: EditorChoiceModalProps) {
             {/* Bonus Amount */}
             <div className="flex-1 flex flex-col justify-center mb-2">
               <div className="text-sm text-tech-gray-600 font-medium mb-2 tech-subheading">VELKOMSTBONUS</div>
-              <div className="text-xl font-black text-tech-black tracking-wider leading-tight tech-heading mb-2">
+              <div className="text-2xl font-black text-tech-black tracking-wider leading-tight tech-heading mb-2">
                 {topSite.bonus}
               </div>
-              <div className="text-xl font-bold leading-tight tech-heading text-black">
+              <div className="text-lg font-bold leading-tight tech-heading text-black">
                 {topSite.welcomeOffer}
               </div>
             </div>
