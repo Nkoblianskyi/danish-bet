@@ -1,6 +1,6 @@
 "use client"
 import { useState, useEffect } from "react"
-import { Star } from "lucide-react"
+import { StarRating } from "@/components/star-rating"
 import { Button } from "@/components/ui/button"
 import type { BettingSite } from "../types"
 import Link from "next/link"
@@ -64,9 +64,7 @@ export function BettingSiteCard({ site, rank }: SiteCardProps) {
             {/* Rank and Status Badges - positioned absolutely */}
             <div className="absolute top-0 left-0 flex gap-0 z-30">
               {rank <= 4 && (
-                <div
-                  className="tech-badge px-2 sm:px-3 md:px-4 py-1 text-xs font-bold !text-black bg-yellow-500 whitespace-nowrap"
-                >
+                <div className="tech-badge px-2 sm:px-3 md:px-4 py-1 text-xs font-bold !text-black bg-yellow-500 whitespace-nowrap">
                   {getRankLabel(rank)}
                 </div>
               )}
@@ -81,9 +79,7 @@ export function BettingSiteCard({ site, rank }: SiteCardProps) {
 
             {/* RATING - 12% */}
             <div className="flex-[0_0_12%] px-2 text-center flex flex-col justify-center h-full relative z-10">
-              <div
-                className="text-4xl xl:text-5xl font-bold leading-none mb-1 tech-heading text-green-700"
-              >
+              <div className="text-4xl xl:text-5xl font-bold leading-none mb-1 tech-heading text-green-700">
                 {site.rating.toFixed(1)}
               </div>
               <div className="text-xs font-bold text-tech-gray-600 tech-subheading">SCORE</div>
@@ -94,10 +90,8 @@ export function BettingSiteCard({ site, rank }: SiteCardProps) {
               <div className="text-xs text-tech-gray-600 mb-2 tech-subheading">
                 ({formatVotes(site.votes)} ANMELDELSER)
               </div>
-              <div className="flex justify-center gap-1 mb-2">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 xl:w-5 h-4 xl:h-5 fill-current text-yellow-400" />
-                ))}
+              <div className="flex justify-center mb-2">
+                <StarRating rating={site.rating} size="lg" />
               </div>
               <div className="text-sm text-tech-black font-bold tech-subheading">FREMRAGENDE</div>
             </div>
@@ -137,7 +131,6 @@ export function BettingSiteCard({ site, rank }: SiteCardProps) {
         <Link href={site.link} target="_blank" rel="noopener noreferrer" className="block">
           <div className="pt-6 pb-4 bg-tech-white relative">
             <div className="absolute top-0 left-0 flex z-30" style={{ margin: 0, padding: 0 }}>
-
               {rank <= 4 && (
                 <div
                   className="tech-badge px-2 py-0.5 text-xs font-bold !text-black whitespace-nowrap bg-yellow-400"
@@ -173,10 +166,8 @@ export function BettingSiteCard({ site, rank }: SiteCardProps) {
               {/* Rating - 2 колонки */}
               <div className="col-span-2 text-center">
                 <div className="text-xs text-tech-gray-600 mb-1 tech-subheading">({formatVotes(site.votes)})</div>
-                <div className="flex justify-center gap-0.5 mb-1">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-3 h-3 fill-current text-yellow-400"/>
-                  ))}
+                <div className="flex justify-center mb-1">
+                  <StarRating rating={site.rating} size="sm" />
                 </div>
               </div>
 
@@ -199,10 +190,7 @@ export function BettingSiteCard({ site, rank }: SiteCardProps) {
             {/* Badges */}
             <div className="absolute top-0 left-0 flex gap-0 z-30">
               {rank <= 4 && (
-                <div
-                  className="tech-badge px-3 py-1 text-xs font-bold !text-black bg-yellow-400 whitespace-nowrap"
-
-                >
+                <div className="tech-badge px-3 py-1 text-xs font-bold !text-black bg-yellow-400 whitespace-nowrap">
                   {getRankLabel(rank)}
                 </div>
               )}
@@ -234,10 +222,8 @@ export function BettingSiteCard({ site, rank }: SiteCardProps) {
                 <div className="text-[8px] text-tech-gray-600 font-bold tech-subheading">SCORE</div>
               </div>
               <div className="text-center">
-                <div className="flex justify-center gap-0.5 mt-2 mb-1">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-current text-yellow-400" />
-                  ))}
+                <div className="flex justify-center mt-2 mb-1">
+                  <StarRating rating={site.rating} size="md" />
                 </div>
                 <div className="text-[10px] text-tech-gray-600 font-bold tech-subheading">
                   ({formatVotes(site.votes)})
@@ -253,21 +239,6 @@ export function BettingSiteCard({ site, rank }: SiteCardProps) {
             </div>
           </div>
         </Link>
-
-        {/* Footer Disclaimer */}
-        {/* <div className="px-4 pb-2 border-t border-neutral-200 bg-neutral-50">
-          <p className="text-xs text-neutral-500 text-center py-2">
-            18+ | Sikker spil |{" "}
-            <a
-              href="https://spillemyndigheden.dk/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-brand-600 hover:text-brand-700 underline"
-            >
-              spillemyndigheden.dk
-            </a>
-          </p>
-        </div> */}
       </div>
     </div>
   )

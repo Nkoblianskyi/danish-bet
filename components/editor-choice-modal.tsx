@@ -1,12 +1,11 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { X, Star, Award } from "lucide-react"
+import { X, Award } from "lucide-react"
+import { StarRating } from "@/components/star-rating"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import { BettingSite } from "@/types"
-
-
+import type { BettingSite } from "@/types"
 
 interface EditorChoiceModalProps {
   bettingSites: BettingSite[]
@@ -59,7 +58,6 @@ export function EditorChoiceModal({ bettingSites }: EditorChoiceModalProps) {
 
         {/* Single Card - Vertical Layout */}
         <div className="tech-card overflow-hidden transition-all duration-300 hover:scale-105 flex flex-col w-full max-w-[320px] h-[420px] border-4 border-tech-gold shadow-tech-glow bg-tech-white relative">
-
           {/* Logo section */}
           <div className="bg-black h-44 flex items-center justify-center p-4 border-b-2 border-tech-black flex-shrink-0 relative">
             <img
@@ -71,21 +69,13 @@ export function EditorChoiceModal({ bettingSites }: EditorChoiceModalProps) {
 
           {/* Content */}
           <div className="bg-tech-white text-tech-black flex-1 flex flex-col p-4 text-center justify-between min-h-0 relative">
-
-
             <div className="flex flex-row items-center justify-center gap-4">
               {/* Rating Stars */}
-              <div className="flex justify-center gap-1">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 fill-current text-yellow-400" />
-                ))}
-              </div>
+              <StarRating rating={topSite.rating} size="lg" />
 
               {/* Rating Score */}
               <div>
-                <span className="font-bold tech-subheading text-xl text-green-700">
-                  {topSite.rating.toFixed(1)}/10
-                </span>
+                <span className="font-bold tech-subheading text-xl text-green-700">{topSite.rating.toFixed(1)}/10</span>
               </div>
             </div>
 
@@ -95,12 +85,8 @@ export function EditorChoiceModal({ bettingSites }: EditorChoiceModalProps) {
               <div className="text-2xl font-black text-tech-black tracking-wider leading-tight tech-heading mb-2">
                 {topSite.bonus}
               </div>
-              <div className="text-lg font-bold leading-tight tech-heading text-black">
-                {topSite.welcomeOffer}
-              </div>
+              <div className="text-lg font-bold leading-tight tech-heading text-black">{topSite.welcomeOffer}</div>
             </div>
-
-
 
             {/* CTA Button */}
             <div>
@@ -119,8 +105,6 @@ export function EditorChoiceModal({ bettingSites }: EditorChoiceModalProps) {
         {/* Footer */}
         <div className="text-center mt-6 px-2 flex-shrink-0">
           <div className="bg-tech-white/95 backdrop-blur-sm border-2 border-tech-gold p-3 relative shadow-tech-strong">
-
-
             <p className="text-tech-black text-[10px] sm:text-xs font-bold mb-0.5 sm:mb-1 tech-subheading">
               18+ Kun | spillemyndigheden.dk
             </p>
